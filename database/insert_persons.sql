@@ -1,5 +1,5 @@
 -- Persons
--- Hombres
+-- Coaches
 INSERT INTO persons (perFirstName,perLastName) VALUES ("Nero","Mcleod");
 INSERT INTO persons (perFirstName,perLastName) VALUES ("Kane","Glenn");
 INSERT INTO persons (perFirstName,perLastName) VALUES ("Hamilton","Austin");
@@ -373,3 +373,29 @@ INSERT INTO persons (perFirstName,perLastName) VALUES ("Byron","Ross");
 INSERT INTO persons (perFirstName,perLastName) VALUES ("Gil","Hubbard");
 INSERT INTO persons (perFirstName,perLastName) VALUES ("Salvador","Doyle");
 INSERT INTO persons (perFirstName,perLastName) VALUES ("Dana","Stafford");
+
+-- mas coaches
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Emery","Gould");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Owen","Allen");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Donovan","Hicks");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Fuller","Allen");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Baxter","Sykes");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Howard","Lambert");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Keaton","Skinner");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Jason","Patrick");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Alan","Montgomery");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Fitzgerald","Nash");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Ciaran","Romero");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Hu","Chan");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Darius","Lowery");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Raja","Davis");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Lee","Donaldson");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Elijah","Lang");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Wang","Sheppard");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Micah","Reyes");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Kennan","Conley");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Todd","Pittman");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Steel","Sanchez");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Dean","Reyes");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Cadman","Rice");
+INSERT INTO persons (perFirstName,perLastName) VALUES ("Jarrod","Sargent");
