@@ -49,8 +49,10 @@ create table teams(
 teaId int primary key AUTO_INCREMENT not null,
 staId tinyint not null,
 teaName varchar(25) not null,
+teaImage varchar(15) not null,
 catId int not null, -- category id
-coaId int not null -- coach id
+coaId int not null, -- coach id
+seaId int not null --  season id
 );
 alter table teams AUTO_INCREMENT=1;
 
@@ -99,7 +101,6 @@ alter table seasons AUTO_INCREMENT=1;
 
 create table matches(
 matId int primary key AUTO_INCREMENT not null,
-seaId int not null, --  season id
 matHomeTeam int not null, -- team id
 matGuestTeam int not null, -- team id
 matField varchar(35) not null,
@@ -217,6 +218,9 @@ add constraint FK_Category_Team foreign key (catId) references categories(catId)
 alter table teams
 add constraint FK_Status_Team foreign key (staId) references status(staId);
 
+alter table teams
+add constraint FK_Season_Team foreign key (seaId) references seasons(seaId);
+
 -- teams stats
 
 alter table teamStats
@@ -233,10 +237,6 @@ alter table lineups
 add constraint FK_Match_Lineup foreign key (matId) references matches(matId);
 
 -- matches
-
-alter table matches
-add constraint FK_Season_Match foreign key (seaId) references seasons(seaId);
-
 alter table matches
 add constraint FK_HomeTeam_Match foreign key (matHomeTeam) references teams(teaId);
 
