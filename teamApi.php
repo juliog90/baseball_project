@@ -134,6 +134,11 @@ if($_SERVER['REQUEST_METHOD'] == 'PUT')
         $post_vars = json_decode($jsonData['dataTeam'], true);
     }
 
+<<<<<<< HEAD
+=======
+    var_dump($post_vars);
+    var_dump($jsonData);
+>>>>>>> 57d9c9b038de57211f74b3a31ff3a3ea2c06a955
 
     if(isset($post_vars['statusTeam']) && isset($post_vars['idTeam']) && isset($post_vars['nameTeam']) && isset($post_vars['categoryTeam']) && isset($post_vars['coachTeam']) && isset($post_vars['imageTeam']) && isset($post_vars['seasonTeam'])) 
     {
