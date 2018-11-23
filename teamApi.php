@@ -21,6 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
             echo json_encode(array(
                 'status' => 2,
                 'errorMessage' => 'Invalid team id',
+                var_dump($ex->getMessage()),
                 'details' => $ex->getMessage()
             ));
         }

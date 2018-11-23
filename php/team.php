@@ -54,14 +54,14 @@ class Team {
             $idTemp = func_get_arg(0);
             $command->bind_param('i', $idTemp);
             $command->execute();
-            $command->bind_result($id, $status, $name, $category, $coach, $image, $season);
+            $command->bind_result($id, $status, $name, $image, $category, $coach, $season);
             if($command->fetch()) {
                 $this->id = $id;
                 $this->name = $name;
                 $this->image = $image;
                 $this->category = new Category($category);
                 $this->coach = new Coach($coach);
-                $this->season = $season;
+                $this->season = new Season($season);
                 $this->status = $status;
             } 
             else 
