@@ -21,7 +21,6 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
             echo json_encode(array(
                 'status' => 2,
                 'errorMessage' => 'Invalid team id',
-                var_dump($ex->getMessage()),
                 'details' => $ex->getMessage()
             ));
         }
@@ -40,7 +39,6 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $parametersOk = false;
-       var_dump($_POST);
 
    if(isset($_POST['nameTeam']) && isset($_POST['categoryTeam']) && isset($_POST['coachTeam']) && isset($_POST['seasonTeam']) && isset($_POST['imageTeam']))
    {
@@ -51,6 +49,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
        $t = new Team();
        $t->setName($_POST['nameTeam']);
        $t->setImage($_POST['imageTeam']);
+       $t->setStatus(1);
 
        try {
            $cat = new Category($_POST['categoryTeam']);
@@ -67,7 +66,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
        if ($right) {
            try {
-               $sea = new Seson($_POST['seasonTeam']);
+               $sea = new Season($_POST['seasonTeam']);
                $t->setSeason($sea);
                
            } catch (RecordNotFoundException $ex) {
@@ -135,7 +134,8 @@ if($_SERVER['REQUEST_METHOD'] == 'PUT')
         $post_vars = json_decode($jsonData['dataTeam'], true);
     }
 
-    if(isset($post_vars['idTeam']) && isset($post_vars['nameTeam']) && isset($post_vars['categoryTeam']) && isset($post_vars['coachTeam']) && isset($post_vars['imageTeam']) && isset($post_vars['seasonTeam'])) 
+
+    if(isset($post_vars['statusTeam']) && isset($post_vars['idTeam']) && isset($post_vars['nameTeam']) && isset($post_vars['categoryTeam']) && isset($post_vars['coachTeam']) && isset($post_vars['imageTeam']) && isset($post_vars['seasonTeam'])) 
     {
         $parametersOk = true;
 	$right = true;
@@ -159,7 +159,7 @@ if($_SERVER['REQUEST_METHOD'] == 'PUT')
        if ($right) {
            try {
                $sea = new Season($post_vars['seasonTeam']);
-               $t->setSeason($season);
+               $t->setSeason($sea);
                
            } catch (RecordNotFoundException $ex) {
                $right = false;

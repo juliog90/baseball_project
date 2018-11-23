@@ -30,11 +30,11 @@ class Team {
     public function getStatus() { return $this->status; }
     public function setStatus($status) { $this->status = $status; }
 
-    public function getImage() { return $this->status; }
-    public function setImage($status) { $this->status = $status; }
+    public function getImage() { return $this->image; }
+    public function setImage($image) { $this->image = $image; }
 
-    public function getSeason() { return $this->status; }
-    public function setSeason($status) { $this->status = $status; }
+    public function getSeason() { return $this->season; }
+    public function setSeason($season) { $this->season = $season; }
 
     public function __construct() {
         if(func_num_args() == 0) {
@@ -221,7 +221,7 @@ class Team {
     public function add()
     {
         $connection = MySqlConnection::getConnection();
-        $statement = 'insert into teams(staId, teaName, catId, coaId, teaImage, seaId) values(?, ?, ?, ?)';
+        $statement = 'insert into teams(staId, teaName, teaImage, catId, coaId, seaId) values(?, ?, ?, ?, ?, ?)';
         $command = $connection->prepare($statement);
         $status = $this->status;
         $name = $this->name;
@@ -229,9 +229,7 @@ class Team {
         $coachId = $this->coach->getId();
         $image = $this->image;
         $seasonId = $this->season->getId();
-
-        $command->bind_param('issiiii',$status, $name, $image, $categoryId, $coachId, $seasonId, $id);
-
+        $command->bind_param('issiii',$status, $name, $image, $categoryId, $coachId, $seasonId);
         $result = $command->execute();
 
         mysqli_stmt_close($command);
