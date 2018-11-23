@@ -40,14 +40,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $parametersOk = false;
 
-   if(isset($_POST['nameTeam']) && isset($_POST['categoryTeam']) && isset($_POST['coachTeam']) && isset($_POST['seasonTeam']) && isset($_POST['imageTeam']))
+   if(isset($_POST['nameTeam']) && isset($_POST['categoryTeam']) && isset($_POST['coachTeam']))
    {
        $parametersOk = true;
        $right = true;
 
        $t = new Team();
        $t->setName($_POST['nameTeam']);
-       $t->setImage($_POST['imageTeam']);
 
        try {
            $cat = new Category($_POST['categoryTeam']);
@@ -60,21 +59,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                 'errorMessage' => 'Invalid team id',
                 'details' => $ex->getMessage()
             ));
-       }
-
-       if ($right) {
-           try {
-               $sea = new Seson($_POST['seasonTeam']);
-               $t->setSeason($sea);
-               
-           } catch (RecordNotFoundException $ex) {
-               $right = false;
-                echo json_encode(array(
-                    'status' => 2,
-                    'errorMessage' => 'Invalid season id',
-                    'details' => $ex->getMessage()
-                ));
-           }
        }
 
        if ($right) {
@@ -132,7 +116,7 @@ if($_SERVER['REQUEST_METHOD'] == 'PUT')
         $post_vars = json_decode($jsonData['dataTeam'], true);
     }
 
-    if(isset($post_vars['idTeam']) && isset($post_vars['nameTeam']) && isset($post_vars['categoryTeam']) && isset($post_vars['coachTeam']) && isset($post_vars['imageTeam']) && isset($post_vars['seasonTeam'])) 
+    if(isset($post_vars['idTeam']) && isset($post_vars['nameTeam']) && isset($post_vars['categoryTeam']) && isset($post_vars['coachTeam']))
     {
         $parametersOk = true;
 	$right = true;
@@ -141,7 +125,6 @@ if($_SERVER['REQUEST_METHOD'] == 'PUT')
         {
 	    $t = new Team($post_vars['idTeam']);
 	    $t->setName($post_vars['nameTeam']);
-            $t->setImage($post_vars['imageTeam']);
         }       
         catch(RecordNotFoundException $ex)
         {
@@ -152,21 +135,6 @@ if($_SERVER['REQUEST_METHOD'] == 'PUT')
                 'details' => $ex->getMessage()
             ));
         }
-
-       if ($right) {
-           try {
-               $sea = new Season($post_vars['seasonTeam']);
-               $t->setSeason($season);
-               
-           } catch (RecordNotFoundException $ex) {
-               $right = false;
-                echo json_encode(array(
-                    'status' => 2,
-                    'errorMessage' => 'Invalid season id',
-                    'details' => $ex->getMessage()
-                ));
-           }
-       }
 
        if ($right) {
            try {

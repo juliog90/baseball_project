@@ -1,7 +1,6 @@
 <?php
 
 require_once('category.php');
-require_once('season.php');
 require_once('coach.php');
 require_once('connection.php');
 require_once('exceptions/recordnotfoundexception.php');
@@ -13,8 +12,6 @@ class Team {
     private $category; 
     private $coach; 
     private $status;
-    private $image;
-    private $season;
 
     public function getId() { return $this->id; }
 
@@ -30,12 +27,6 @@ class Team {
     public function getStatus() { return $this->status; }
     public function setStatus($status) { $this->status = $status; }
 
-    public function getImage() { return $this->status; }
-    public function setImage($status) { $this->status = $status; }
-
-    public function getSeason() { return $this->status; }
-    public function setSeason($status) { $this->status = $status; }
-
     public function __construct() {
         if(func_num_args() == 0) {
             $this->id = 0;
@@ -43,25 +34,21 @@ class Team {
             $this->category = new Category();
             $this->coach = new Coach();
             $this->status = 1;
-            $this->image = "";
-            $this->season = new Season();
         }
 
         if(func_num_args() == 1) {
             $connection = MySqlConnection::getConnection();
-            $query = 'select teaId, staId, teaName, teaImage, catId, coaId, seaId from teams where teaId = ?';
+            $query = 'select teaId, staId, teaName, catId, coaId from teams where teaId = ?';
             $command = $connection->prepare($query);
             $idTemp = func_get_arg(0);
             $command->bind_param('i', $idTemp);
             $command->execute();
-            $command->bind_result($id, $status, $name, $category, $coach, $image, $season);
+            $command->bind_result($id, $status, $name, $category, $coach);
             if($command->fetch()) {
                 $this->id = $id;
                 $this->name = $name;
-                $this->image = $image;
                 $this->category = new Category($category);
                 $this->coach = new Coach($coach);
-                $this->season = $season;
                 $this->status = $status;
             } 
             else 
@@ -73,14 +60,12 @@ class Team {
             $connection->close();
         }
 
-        if(func_num_args() == 7) {
+        if(func_num_args() == 5) {
             $this->id = func_get_arg(0);
             $this->status = func_get_arg(1);
             $this->name = func_get_arg(2);
             $this->category = func_get_arg(3);
             $this->coach = func_get_arg(4);
-            $this->image = func_get_arg(5);
-            $this->season = func_get_arg(6);
         }
     }
 
@@ -108,13 +93,13 @@ class Team {
     {
         $allTeams = array();
         $connection = MySqlConnection::getConnection();
-        $query = 'select teaId, staId, teaName, teaImage, catId, coaId, seaId from teams';
+        $query = 'select teaId, staId, teaName, catId, coaId from teams';
         $command = $connection->prepare($query);
         $command->execute();
-        $command->bind_result($id, $status, $name, $image, $category, $coach, $season);
+        $command->bind_result($id, $status, $name, $category, $coach);
         while($command->fetch())
         {
-            array_push($allTeams, new Team($id, $status, $name, new Category($category), new Coach($coach), $image, new Season($season)));
+            array_push($allTeams, new Team($id, $status, $name, new Category($category), new Coach($coach)));
         }
 
         mysqli_stmt_close($command);
@@ -176,9 +161,7 @@ class Team {
             'status' => $this->status,
             'name'=>$this->name,
             'category'=>json_decode($this->category->toJson()),
-            'coach' => json_decode($this->coach->toJson()),
-            'image' => $this->image,
-            'season' => json_decode($this->season->toJson())
+            'coach' => json_decode($this->coach->toJson())
         ));
     }
 
@@ -201,16 +184,14 @@ class Team {
     public function edit()
     {
         $connection = MySqlConnection::getConnection();
-        $statement = 'update teams set staId = ?, teaName = ?, teaImage = ?, catId = ?, coaId = ?, seaId = ? where teaId = ?';
+        $statement = 'update teams set staId = ?, teaName = ?, catId = ?, coaId = ? where teaId = ?';
         $command = $connection->prepare($statement);
         $id = $this->id;
         $status = $this->status;
         $name = $this->name;
-        $image = $this->image;
         $categoryId = $this->category->getId();
         $coachId = $this->coach->getId();
-        $seasonId = $this->season->getId();
-        $command->bind_param('issiiii',$status, $name, $image, $categoryId, $coachId, $seasonId, $id);
+        $command->bind_param('isiii',$status, $name, $categoryId, $coachId, $id);
         $result = $command->execute();
         mysqli_stmt_close($command);
         $connection->close();
@@ -221,16 +202,14 @@ class Team {
     public function add()
     {
         $connection = MySqlConnection::getConnection();
-        $statement = 'insert into teams(staId, teaName, catId, coaId, teaImage, seaId) values(?, ?, ?, ?)';
+        $statement = 'insert into teams(staId, teaName, catId, coaId) values(?, ?, ?, ?)';
         $command = $connection->prepare($statement);
         $status = $this->status;
         $name = $this->name;
         $categoryId = $this->category->getId();
         $coachId = $this->coach->getId();
-        $image = $this->image;
-        $seasonId = $this->season->getId();
 
-        $command->bind_param('issiiii',$status, $name, $image, $categoryId, $coachId, $seasonId, $id);
+        $command->bind_param('isii', $status, $name, $categoryId, $coachId);
 
         $result = $command->execute();
 
