@@ -40,11 +40,13 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $parametersOk = false;
+       var_dump($_POST);
 
    if(isset($_POST['nameTeam']) && isset($_POST['categoryTeam']) && isset($_POST['coachTeam']) && isset($_POST['seasonTeam']) && isset($_POST['imageTeam']))
    {
        $parametersOk = true;
        $right = true;
+
 
        $t = new Team();
        $t->setName($_POST['nameTeam']);
