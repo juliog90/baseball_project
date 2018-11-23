@@ -389,13 +389,12 @@ INSERT INTO persons (perFirstName,perLastName) VALUES ("Driscoll","Serrano");
 INSERT INTO persons (perFirstName,perLastName) VALUES ("Erasmus","Ingram");
 INSERT INTO persons (perFirstName,perLastName) VALUES ("Carter","Alford");
 -- Mujeres
----------------------
 INSERT INTO persons (perFirstName,perLastName) VALUES ("Laurel","Horne");
 INSERT INTO persons (perFirstName,perLastName) VALUES ("Xantha","Soto");
 INSERT INTO persons (perFirstName,perLastName) VALUES ("Iona","Haynes");
 INSERT INTO persons (perFirstName,perLastName) VALUES ("Christine","Mooney");
 INSERT INTO persons (perFirstName,perLastName) VALUES ("Wendy","Ferguson");
---- Termina 3 equipos
+-- Termina 3 equipos
 -- Jugadores segunda inserccion 51 en adelante
 -- equipo 1-4
 INSERT INTO persons (perFirstName,perLastName) VALUES ("Martin","Spence");
