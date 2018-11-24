@@ -108,8 +108,8 @@
                 'team'=>json_decode($this->team->toJson()),
                 'nickName'=>$this->nickName,
                 'birthDate'=>$this->birthDate,
+                'image' => 'http://' . $_SERVER['HTTP_HOST'] . '/photos/' . $this->image,
                 'debut'=>$this->debut,
-                'image'=>$this->image,
                 'number'=>$this->playerNumber
             ));
         }
