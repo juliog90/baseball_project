@@ -1,401 +1,402 @@
 -- Persons
 -- Coaches
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Nero","Mcleod");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kane","Glenn");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Hamilton","Austin");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Nicholas","Morin");
--- Jugadores
--- Equipo 1-1
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Abel","Lewis");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Ivan","Woodward");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Rogan","Lopez");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Cairo","Mcpherson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Christopher","Hansen");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Jelani","Castillo");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Ishmael","George");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Fitzgerald","Lang");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Alfonso","Santana");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Rudyard","Murray");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kibo","Rivas");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kenneth","Greene");
--- equipo 1-2
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Wayne","Gibbs");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Zeph","Ortega");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Rogan","Huff");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Scott","Velasquez");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Adam","Wooten");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Addison","Santana");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Basil","Campos");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Yuli","Mcdaniel");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Tarik","Bruce");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Orlando","Booth");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Curran","Booth");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kelly","Campbell");
--- equipo 1-3
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Elmo","Salas");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Upton","Stark");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Oscar","Mcknight");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Mohammad","Hays");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Driscoll","Serrano");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Erasmus","Ingram");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Carter","Alford");
--- Mujeres
----------------------
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Laurel","Horne");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Xantha","Soto");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Iona","Haynes");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Christine","Mooney");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Wendy","Ferguson");
---- Termina 3 equipos
--- Jugadores segunda inserccion 51 en adelante
--- equipo 1-4
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Martin","Spence");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Cade","Mclaughlin");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Nicholas","Hensley");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Jerome","Nguyen");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Talon","Mosley");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Amos","Banks");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Ferris","Figueroa");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Fritz","Berger");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Grant","Lindsey");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Lewis","Guy");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Stuart","Meadows");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Stephany","Carroll");
--- equipo 2-1
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Dalton","Duncan");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Alden","Wheeler");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Shad","Zimmerman");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Aidan","Burgess");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Carter","Henry");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Dustin","Odonnell");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Donovan","Drake");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Zachery","Carrillo");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Zachary","Howe");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Reese","Ochoa");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Wing","Carson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Mary","Reynolds");
--- equipo 2-2
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Damian","Norman");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Hiram","Franco");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Jonas","Clements");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Castor","Baird");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Tobias","Knowles");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Troy","Rodriquez");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Slade","David");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Sawyer","Travis");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Joel","Hendricks");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Dane","Anthony");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Ishmael","Buckner");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Driscoll","Cochran");
--- equipo 2-3
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kasimir","Mayo");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Carl","Cantrell");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Philip","Roberts");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Brendan","Daniels");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Harding","Parrish");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Wang","Mccarty");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Carson","Guerra");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Marsden","Booth");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Sebastian","Rivers");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Solomon","Douglas");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Erasmus","Stevens");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Vannesa","Brock");
--- equipo 2-4
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Christian","Schwartz");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Quentin","Mcfarland");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Akeem","Mcmillan");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kibo","Mcfadden");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Raymond","Ryan");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Davis","Hobbs");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Amos","Gentry");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Dustin","Mcmillan");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Price","Lucas");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Mohammad","Dixon");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Caleb","Houston");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Nicole","Marquez");
--- equipo 3-1
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Murphy","Poole");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Colorado","Burgess");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kelly","House");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Malachi","Clarke");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Abel","Dickson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Mufutau","Hebert");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kenyon","Hunt");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Hayden","Brown");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Gregory","Barker");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Cody","Sosa");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Mason","James");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Brenda","Shields");
--- equipo 3-2
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Emery","Haynes");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Barry","Flores");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Levi","Wiley");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Drake","Moss");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Micah","Lucas");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Erich","Phillips");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Anthony","Burton");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Oleg","Herring");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Blake","Mckinney");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Dean","Kelley");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Russell","Everett");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Dennise","Poole");
--- equipo 3-3
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Nehru","Riddle");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Darius","Mueller");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Logan","Atkins");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Abbot","Acosta");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Ethan","Newman");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Baxter","Nichols");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Ivan","Singleton");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Joseph","Mcleod");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Todd","Giles");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Yuli","Anderson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Jesse","Glenn");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Clarisse","England");
--- equipo 3-4
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Walker","Burnett");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Timothy","Wilder");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kane","Lucas");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Caesar","Wade");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Stephen","Irwin");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Rudyard","Barrera");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Malik","Guthrie");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Jonah","Todd");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Judah","Hardy");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Cooper","Harvey");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Mason","Howard");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Nasima","Middleton");
--- equipo 4-1
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Nolan","Rodriguez");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Camden","Luna");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Benedict","Stone");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Gray","Dunlap");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Travis","Higgins");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Preston","Ramsey");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Colorado","Allen");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Slade","Sloan");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Hall","Taylor");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Cameron","Gilbert");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Ulric","Sampson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Gray","Valentine");
--- equipo 4-2
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Benedict","Rowe");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Simon","Webb");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Ivan","Wade");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Vaughan","Gay");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Eric","Chambers");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Callum","Henderson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Tucker","Wyatt");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Reece","Mcdonald");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Grady","Cooper");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Alfonso","Ballard");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Christian","Gallegos");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Ramona","Casey");
--- equipo 4-3
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Eric","Mckee");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Bert","Orr");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kasimir","Gutierrez");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Francis","Sherman");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Lee","Santana");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Tyrone","Ramirez");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Benedict","Knapp");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Martin","Bradley");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Tobias","Mcdowell");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Neville","Wiggins");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Emery","Slater");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Fernanda","Maldonado");
--- equipo 4-4
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Forrest","Blankenship");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Wesley","Hanson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Mark","Rowe");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Daquan","Bauer");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Tucker","Alston");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Melvin","Hughes");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Drew","Castillo");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Arden","Mccarthy");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Elijah","Hood");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Zachery","Pitts");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Holmes","Moon");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Pamela","Nunez");
--- equipo 5-1
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Abel","Diaz");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Wyatt","Chang");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Jin","Chapman");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Robert","Riggs");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Lyle","Dorsey");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Hashim","Hart");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Jackson","Garza");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Upton","Nguyen");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Thane","Spencer");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Yuli","Kidd");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Ian","Martinez");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Merlinda","Baldwin");
--- equipo 5-2
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Scott","Bowen");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kasimir","Riley");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Macon","Wise");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Leonard","Mcguire");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Baxter","Olsen");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Ulysses","Holmes");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Marsden","Barry");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Merritt","Herring");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Zeph","Kidd");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kenyon","Calhoun");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Aristotle","Garza");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Linda","Wood");
--- equipo 5-3
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Branden","Rosales");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Emerson","Morales");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Raymond","Hays");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Lionel","Adams");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kadeem","Whitaker");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Mark","Nielsen");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Driscoll","Guthrie");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Victor","Mcfarland");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Martin","Moss");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Giacomo","Mcneil");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Sylvester","Ryan");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Josefina","Haynes");
--- equipo 5-4
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Nero","Tillman");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Mannix","Carlson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Andrew","Mayer");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Garrett","Dawson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Sawyer","Hall");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Hasad","Eaton");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Isaiah","Merrill");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Jonah","Carroll");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Damian","Matthews");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Caesar","Bradshaw");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Byron","Carver");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Susana","Gutierrez");
--- equipo 6-1
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Lane","Hendricks");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Richard","Ochoa");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Cedric","Wallace");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Colby","Salas");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Merritt","Mcbride");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Ralph","Kelly");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Aladdin","Hicks");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Thane","Fuentes");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Austin","Miranda");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Grady","Patterson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Palmer","Sherman");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Martha","Glenn");
--- equipo 6-2
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Plato","Gallegos");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Wallace","Foreman");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Sean","Cooper");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Matthew","Washington");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Eagan","Dickson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Dustin","Rosa");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Jasper","Maxwell");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Byron","Schroeder");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Tyler","Coffey");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Dexter","Durham");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Scott","Campbell");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Teresa","Church");
--- equipo 6-3
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Benjamin","Sharpe");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Dennis","Simon");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Oliver","Christian");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Tyrone","Rivers");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Cade","Key");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Noble","Small");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Lewis","Koch");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Jackson","Mosley");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Rashad","Mccoy");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Daquan","Williamson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Oren","Mann");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Dorothy","Lowe");
--- equipo 6-4
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Timothy","Hendricks");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Gannon","Bowman");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Martin","Michael");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Emmanuel","Farrell");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Colby","French");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kieran","Michael");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Fitzgerald","Meyer");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Connor","Kinney");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Davis","Lawrence");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Cullen","Baker");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Xavier","Gaines");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Seledonia","Haney");
--- equipo 7-1
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Vance","Horton");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Sebastian","Blake");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Mannix","Salas");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Mufutau","Ward");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Herman","Houston");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Tucker","Keller");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Tucker","Burks");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Baxter","Olson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Bernard","Morton");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Vernon","Alvarado");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Baker","Sampson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Maggy","Herman");
--- equipo 7-2
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Blaze","Burks");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Damon","Henry");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kenyon","Stark");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Malik","Gould");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Solomon","Mckenzie");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Harding","Powers");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Marsden","Kinney");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Howard","Phillips");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Wesley","Tyson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Gary","Olsen");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Burke","Vazquez");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Karen","Thompson");
--- equipo 7-3
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kenyon","Watkins");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Dolan","Ewing");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Judah","Johnston");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Oscar","Neal");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Erasmus","Atkins");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Hop","Meadows");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Zeph","Alvarez");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Byron","Pitts");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kamal","Sims");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Erich","Hamilton");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Erasmus","James");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Erika","Best");
--- equipo 7-4
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Herrod","Monroe");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Ralph","Sims");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kane","Rosa");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Declan","Daugherty");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Abraham","Ayala");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Sebastian","Kent");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Chase","Simon");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Oren","Hooper");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Byron","Ross");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Gil","Hubbard");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Salvador","Doyle");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Dana","Stafford");
+INSERT INTO persons (perFirstName,perLastName) VALUES 
+("Nero","Mcleod"),
+("Kane","Glenn"),
+("Hamilton","Austin"),
+("Nicholas","Morin"),
+("Abel","Lewis"),
+("Ivan","Woodward"),
+("Rogan","Lopez"),
+("Cairo","Mcpherson"),
+("Christopher","Hansen"),
+("Jelani","Castillo"),
+("Ishmael","George"),
+("Fitzgerald","Lang"),
+("Alfonso","Santana"),
+("Rudyard","Murray"),
+("Kibo","Rivas"),
+("Kenneth","Greene"),
 
--- mas coaches
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Emery","Gould");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Owen","Allen");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Donovan","Hicks");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Fuller","Allen");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Baxter","Sykes");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Howard","Lambert");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Keaton","Skinner");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Jason","Patrick");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Alan","Montgomery");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Fitzgerald","Nash");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Ciaran","Romero");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Hu","Chan");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Darius","Lowery");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Raja","Davis");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Lee","Donaldson");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Elijah","Lang");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Wang","Sheppard");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Micah","Reyes");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Kennan","Conley");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Todd","Pittman");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Steel","Sanchez");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Dean","Reyes");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Cadman","Rice");
-INSERT INTO persons (perFirstName,perLastName) VALUES ("Jarrod","Sargent");
+("Wayne","Gibbs"),
+("Zeph","Ortega"),
+("Rogan","Huff"),
+("Scott","Velasquez"),
+("Adam","Wooten"),
+("Addison","Santana"),
+("Basil","Campos"),
+("Yuli","Mcdaniel"),
+("Tarik","Bruce"),
+("Orlando","Booth"),
+("Curran","Booth"),
+("Kelly","Campbell"),
+
+("Elmo","Salas"),
+("Upton","Stark"),
+("Oscar","Mcknight"),
+("Mohammad","Hays"),
+("Driscoll","Serrano"),
+("Erasmus","Ingram"),
+("Carter","Alford"),
+
+
+("Laurel","Horne"),
+("Xantha","Soto"),
+("Iona","Haynes"),
+("Christine","Mooney"),
+("Wendy","Ferguson"),
+
+
+
+("Martin","Spence"),
+("Cade","Mclaughlin"),
+("Nicholas","Hensley"),
+("Jerome","Nguyen"),
+("Talon","Mosley"),
+("Amos","Banks"),
+("Ferris","Figueroa"),
+("Fritz","Berger"),
+("Grant","Lindsey"),
+("Lewis","Guy"),
+("Stuart","Meadows"),
+("Stephany","Carroll"),
+
+("Dalton","Duncan"),
+("Alden","Wheeler"),
+("Shad","Zimmerman"),
+("Aidan","Burgess"),
+("Carter","Henry"),
+("Dustin","Odonnell"),
+("Donovan","Drake"),
+("Zachery","Carrillo"),
+("Zachary","Howe"),
+("Reese","Ochoa"),
+("Wing","Carson"),
+("Mary","Reynolds"),
+
+("Damian","Norman"),
+("Hiram","Franco"),
+("Jonas","Clements"),
+("Castor","Baird"),
+("Tobias","Knowles"),
+("Troy","Rodriquez"),
+("Slade","David"),
+("Sawyer","Travis"),
+("Joel","Hendricks"),
+("Dane","Anthony"),
+("Ishmael","Buckner"),
+("Driscoll","Cochran"),
+
+("Kasimir","Mayo"),
+("Carl","Cantrell"),
+("Philip","Roberts"),
+("Brendan","Daniels"),
+("Harding","Parrish"),
+("Wang","Mccarty"),
+("Carson","Guerra"),
+("Marsden","Booth"),
+("Sebastian","Rivers"),
+("Solomon","Douglas"),
+("Erasmus","Stevens"),
+("Vannesa","Brock"),
+
+("Christian","Schwartz"),
+("Quentin","Mcfarland"),
+("Akeem","Mcmillan"),
+("Kibo","Mcfadden"),
+("Raymond","Ryan"),
+("Davis","Hobbs"),
+("Amos","Gentry"),
+("Dustin","Mcmillan"),
+("Price","Lucas"),
+("Mohammad","Dixon"),
+("Caleb","Houston"),
+("Nicole","Marquez"),
+
+("Murphy","Poole"),
+("Colorado","Burgess"),
+("Kelly","House"),
+("Malachi","Clarke"),
+("Abel","Dickson"),
+("Mufutau","Hebert"),
+("Kenyon","Hunt"),
+("Hayden","Brown"),
+("Gregory","Barker"),
+("Cody","Sosa"),
+("Mason","James"),
+("Brenda","Shields"),
+
+("Emery","Haynes"),
+("Barry","Flores"),
+("Levi","Wiley"),
+("Drake","Moss"),
+("Micah","Lucas"),
+("Erich","Phillips"),
+("Anthony","Burton"),
+("Oleg","Herring"),
+("Blake","Mckinney"),
+("Dean","Kelley"),
+("Russell","Everett"),
+("Dennise","Poole"),
+
+("Nehru","Riddle"),
+("Darius","Mueller"),
+("Logan","Atkins"),
+("Abbot","Acosta"),
+("Ethan","Newman"),
+("Baxter","Nichols"),
+("Ivan","Singleton"),
+("Joseph","Mcleod"),
+("Todd","Giles"),
+("Yuli","Anderson"),
+("Jesse","Glenn"),
+("Clarisse","England"),
+
+("Walker","Burnett"),
+("Timothy","Wilder"),
+("Kane","Lucas"),
+("Caesar","Wade"),
+("Stephen","Irwin"),
+("Rudyard","Barrera"),
+("Malik","Guthrie"),
+("Jonah","Todd"),
+("Judah","Hardy"),
+("Cooper","Harvey"),
+("Mason","Howard"),
+("Nasima","Middleton"),
+
+("Nolan","Rodriguez"),
+("Camden","Luna"),
+("Benedict","Stone"),
+("Gray","Dunlap"),
+("Travis","Higgins"),
+("Preston","Ramsey"),
+("Colorado","Allen"),
+("Slade","Sloan"),
+("Hall","Taylor"),
+("Cameron","Gilbert"),
+("Ulric","Sampson"),
+("Gray","Valentine"),
+
+("Benedict","Rowe"),
+("Simon","Webb"),
+("Ivan","Wade"),
+("Vaughan","Gay"),
+("Eric","Chambers"),
+("Callum","Henderson"),
+("Tucker","Wyatt"),
+("Reece","Mcdonald"),
+("Grady","Cooper"),
+("Alfonso","Ballard"),
+("Christian","Gallegos"),
+("Ramona","Casey"),
+
+("Eric","Mckee"),
+("Bert","Orr"),
+("Kasimir","Gutierrez"),
+("Francis","Sherman"),
+("Lee","Santana"),
+("Tyrone","Ramirez"),
+("Benedict","Knapp"),
+("Martin","Bradley"),
+("Tobias","Mcdowell"),
+("Neville","Wiggins"),
+("Emery","Slater"),
+("Fernanda","Maldonado"),
+
+("Forrest","Blankenship"),
+("Wesley","Hanson"),
+("Mark","Rowe"),
+("Daquan","Bauer"),
+("Tucker","Alston"),
+("Melvin","Hughes"),
+("Drew","Castillo"),
+("Arden","Mccarthy"),
+("Elijah","Hood"),
+("Zachery","Pitts"),
+("Holmes","Moon"),
+("Pamela","Nunez"),
+
+("Abel","Diaz"),
+("Wyatt","Chang"),
+("Jin","Chapman"),
+("Robert","Riggs"),
+("Lyle","Dorsey"),
+("Hashim","Hart"),
+("Jackson","Garza"),
+("Upton","Nguyen"),
+("Thane","Spencer"),
+("Yuli","Kidd"),
+("Ian","Martinez"),
+("Merlinda","Baldwin"),
+
+("Scott","Bowen"),
+("Kasimir","Riley"),
+("Macon","Wise"),
+("Leonard","Mcguire"),
+("Baxter","Olsen"),
+("Ulysses","Holmes"),
+("Marsden","Barry"),
+("Merritt","Herring"),
+("Zeph","Kidd"),
+("Kenyon","Calhoun"),
+("Aristotle","Garza"),
+("Linda","Wood"),
+
+("Branden","Rosales"),
+("Emerson","Morales"),
+("Raymond","Hays"),
+("Lionel","Adams"),
+("Kadeem","Whitaker"),
+("Mark","Nielsen"),
+("Driscoll","Guthrie"),
+("Victor","Mcfarland"),
+("Martin","Moss"),
+("Giacomo","Mcneil"),
+("Sylvester","Ryan"),
+("Josefina","Haynes"),
+
+("Nero","Tillman"),
+("Mannix","Carlson"),
+("Andrew","Mayer"),
+("Garrett","Dawson"),
+("Sawyer","Hall"),
+("Hasad","Eaton"),
+("Isaiah","Merrill"),
+("Jonah","Carroll"),
+("Damian","Matthews"),
+("Caesar","Bradshaw"),
+("Byron","Carver"),
+("Susana","Gutierrez"),
+
+("Lane","Hendricks"),
+("Richard","Ochoa"),
+("Cedric","Wallace"),
+("Colby","Salas"),
+("Merritt","Mcbride"),
+("Ralph","Kelly"),
+("Aladdin","Hicks"),
+("Thane","Fuentes"),
+("Austin","Miranda"),
+("Grady","Patterson"),
+("Palmer","Sherman"),
+("Martha","Glenn"),
+
+("Plato","Gallegos"),
+("Wallace","Foreman"),
+("Sean","Cooper"),
+("Matthew","Washington"),
+("Eagan","Dickson"),
+("Dustin","Rosa"),
+("Jasper","Maxwell"),
+("Byron","Schroeder"),
+("Tyler","Coffey"),
+("Dexter","Durham"),
+("Scott","Campbell"),
+("Teresa","Church"),
+
+("Benjamin","Sharpe"),
+("Dennis","Simon"),
+("Oliver","Christian"),
+("Tyrone","Rivers"),
+("Cade","Key"),
+("Noble","Small"),
+("Lewis","Koch"),
+("Jackson","Mosley"),
+("Rashad","Mccoy"),
+("Daquan","Williamson"),
+("Oren","Mann"),
+("Dorothy","Lowe"),
+
+("Timothy","Hendricks"),
+("Gannon","Bowman"),
+("Martin","Michael"),
+("Emmanuel","Farrell"),
+("Colby","French"),
+("Kieran","Michael"),
+("Fitzgerald","Meyer"),
+("Connor","Kinney"),
+("Davis","Lawrence"),
+("Cullen","Baker"),
+("Xavier","Gaines"),
+("Seledonia","Haney"),
+
+("Vance","Horton"),
+("Sebastian","Blake"),
+("Mannix","Salas"),
+("Mufutau","Ward"),
+("Herman","Houston"),
+("Tucker","Keller"),
+("Tucker","Burks"),
+("Baxter","Olson"),
+("Bernard","Morton"),
+("Vernon","Alvarado"),
+("Baker","Sampson"),
+("Maggy","Herman"),
+
+("Blaze","Burks"),
+("Damon","Henry"),
+("Kenyon","Stark"),
+("Malik","Gould"),
+("Solomon","Mckenzie"),
+("Harding","Powers"),
+("Marsden","Kinney"),
+("Howard","Phillips"),
+("Wesley","Tyson"),
+("Gary","Olsen"),
+("Burke","Vazquez"),
+("Karen","Thompson"),
+
+("Kenyon","Watkins"),
+("Dolan","Ewing"),
+("Judah","Johnston"),
+("Oscar","Neal"),
+("Erasmus","Atkins"),
+("Hop","Meadows"),
+("Zeph","Alvarez"),
+("Byron","Pitts"),
+("Kamal","Sims"),
+("Erich","Hamilton"),
+("Erasmus","James"),
+("Erika","Best"),
+
+("Herrod","Monroe"),
+("Ralph","Sims"),
+("Kane","Rosa"),
+("Declan","Daugherty"),
+("Abraham","Ayala"),
+("Sebastian","Kent"),
+("Chase","Simon"),
+("Oren","Hooper"),
+("Byron","Ross"),
+("Gil","Hubbard"),
+("Salvador","Doyle"),
+("Dana","Stafford"),
+
+
+("Emery","Gould"),
+("Owen","Allen"),
+("Donovan","Hicks"),
+("Fuller","Allen"),
+("Baxter","Sykes"),
+("Howard","Lambert"),
+("Keaton","Skinner"),
+("Jason","Patrick"),
+("Alan","Montgomery"),
+("Fitzgerald","Nash"),
+("Ciaran","Romero"),
+("Hu","Chan"),
+("Darius","Lowery"),
+("Raja","Davis"),
+("Lee","Donaldson"),
+("Elijah","Lang"),
+("Wang","Sheppard"),
+("Micah","Reyes"),
+("Kennan","Conley"),
+("Todd","Pittman"),
+("Steel","Sanchez"),
+("Dean","Reyes"),
+("Cadman","Rice"),
+("Jarrod","Sargent");
+
+
