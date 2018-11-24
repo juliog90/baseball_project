@@ -1,10 +1,12 @@
 -- Persons
 -- Coaches
 INSERT INTO persons (perFirstName,perLastName) VALUES 
+-- coaches
 ("Nero","Mcleod"),
 ("Kane","Glenn"),
 ("Hamilton","Austin"),
 ("Nicholas","Morin"),
+-- players
 ("Abel","Lewis"),
 ("Ivan","Woodward"),
 ("Rogan","Lopez"),
@@ -397,6 +399,15 @@ INSERT INTO persons (perFirstName,perLastName) VALUES
 ("Steel","Sanchez"),
 ("Dean","Reyes"),
 ("Cadman","Rice"),
-("Jarrod","Sargent");
-
-
+("Jarrod","Sargent"),
+-- users
+("Zachary","Stevens"),
+("Oliver","Oliver"),
+("Quamar","Mcmahon"),
+("Wang","Roberts"),
+("Keefe","Welch"),
+("Kibo","Mcdonald"),
+("Cadman","Wiggins"),
+("Rashad","Morton"),
+("Luke","Mcdonald"),
+("Oscar","Davis");
