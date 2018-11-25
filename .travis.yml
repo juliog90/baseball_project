@@ -6,4 +6,6 @@ services:
 before install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS baseball;'  
   - mysql -u root --default-character-set=utf8 baseball < database/z_full_script.sql
+script: 
+  - lel
 
