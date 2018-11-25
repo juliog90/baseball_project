@@ -2,7 +2,7 @@ language: php
 php:
   - 7.1.9
 services:
-  - mysql
+  - mariadb
 before_script:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS baseball;'  
   - mysql -u root --default-character-set=utf8 baseball < database/z_full_script.sql
