@@ -244,10 +244,10 @@ add constraint FK_HomeTeam_Match foreign key (matHomeTeam) references teams(teaI
 
 alter table matches
 add constraint FK_GuestTeam_Match foreign key (matGuestTeam) references teams(teaId);
-
+select 'antes de error' AS '';
 alter table matches
 add constraint FK_Category_Team foreign key (catId) references categories(catId);
-
+select 'despues de error' AS '';
 
 -- matches history
 
