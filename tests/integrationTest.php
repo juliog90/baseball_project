@@ -7,7 +7,7 @@ class CategoryTests extends TestCase
     public function testAdd()
     {
 	$category = new Category(1);
+	var_dump($category);
         $this->assertNotNull($category);
     }
 }
-/* ./vendor/bin/phpunit --bootstrap vendor/autoload.php tests/EmailTest */
