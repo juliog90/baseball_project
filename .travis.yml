@@ -1,7 +1,7 @@
 language: php
 php:
   - 7.1.9
-services:
+addons:
   - mariadb
 before_script:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS baseball;'  
