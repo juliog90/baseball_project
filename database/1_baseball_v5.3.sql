@@ -101,6 +101,7 @@ alter table seasons AUTO_INCREMENT=1;
 
 create table matches(
 matId int primary key AUTO_INCREMENT not null,
+catId int not null,
 matHomeTeam int not null, -- team id
 matGuestTeam int not null, -- team id
 matField varchar(35) not null,
@@ -242,6 +243,9 @@ add constraint FK_HomeTeam_Match foreign key (matHomeTeam) references teams(teaI
 
 alter table matches
 add constraint FK_GuestTeam_Match foreign key (matGuestTeam) references teams(teaId);
+
+alter table matches
+add constraint FK_Category_Team foreign key (catId) references categories(catId);
 
 
 -- matches history
