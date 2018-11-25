@@ -246,7 +246,7 @@ alter table matches
 add constraint FK_GuestTeam_Match foreign key (matGuestTeam) references teams(teaId);
 select 'antes de error' AS '';
 alter table matches
-add constraint FK_Category_Team foreign key (catId) references categories(catId);
+add constraint FK_Matches_Category foreign key (catId) references categories(catId);
 select 'despues de error' AS '';
 
 -- matches history
