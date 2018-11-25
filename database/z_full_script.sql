@@ -1,3 +1,4 @@
+select 'insertando tablas' AS '';
 create table persons(
 perId int primary key AUTO_INCREMENT not null,
 perFirstName varchar(25) not null,
@@ -171,7 +172,7 @@ alter table  AUTO_INCREMENT=1;
 */
 
 -- --------------------------------------------- llaves
-
+select 'Llaves foraneas' AS '';
 -- players
 alter table players
 add constraint FK_Person_Player foreign key (perId) references persons(perId);
@@ -267,7 +268,7 @@ add constraint FK_Match_DisplayMatch foreign key (matId) references matches(matI
 
 
 -- -------------------------- views
-
+select 'Vistas' AS '';
 create view MatchTeamResults
 as
 select m.matId,
@@ -311,7 +312,7 @@ where mr.tie is not 0
 */
 
 -- --------------------- static inserts
-
+select 'Inserts Estaticos' AS '';
 -- actions
 insert into actions (actId, actDescription) VALUES
 ('H', 'Hit'),
@@ -351,6 +352,8 @@ insert into userLevels (ulvId, ulvDescription) VALUES
 (3, 'Coach'),
 (4, 'Scorekeeper'),
 (5, 'Admin');
+
+select 'Inserts de prueba' AS '';
 -- Persons
 -- Coaches
 INSERT INTO persons (perFirstName,perLastName) VALUES 
