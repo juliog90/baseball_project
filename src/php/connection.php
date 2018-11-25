@@ -4,7 +4,7 @@
         #get connection
         public static function getConnection(){
             #read config
-            $data = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/baseball_project/src/config/connection.json');
+            $data = file_get_contents('../config/connection.json');
             $config = json_decode($data, true);
             #parameters
             if(isset($config['server']))
