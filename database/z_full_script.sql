@@ -101,6 +101,7 @@ alter table seasons AUTO_INCREMENT=1;
 
 create table matches(
 matId int primary key AUTO_INCREMENT not null,
+catId int not null,
 matHomeTeam int not null, -- team id
 matGuestTeam int not null, -- team id
 matField varchar(35) not null,
@@ -243,6 +244,9 @@ add constraint FK_HomeTeam_Match foreign key (matHomeTeam) references teams(teaI
 alter table matches
 add constraint FK_GuestTeam_Match foreign key (matGuestTeam) references teams(teaId);
 
+alter table matches
+add constraint FK_Category_Team foreign key (catId) references categories(catId);
+
 
 -- matches history
 
@@ -347,48 +351,6 @@ insert into userLevels (ulvId, ulvDescription) VALUES
 (3, 'Coach'),
 (4, 'Scorekeeper'),
 (5, 'Admin');
--- --------------------- static inserts
-
--- actions
-insert into actions (actId, actDescription) VALUES
-('H', 'Hit'),
-('HR', 'Home Run'),
-('st', 'Strike'),
-('R', 'Run'),
-('B', 'Ball'),
-('FO', 'Fly Out'),
-('GO', 'Ground Out'),
-('SB', 'Stolen Base');
-
--- status
-insert into status (staId, staStatus) VALUES
-(1, 'Active'),
-(2, 'Inactive'),
-(3, 'Wounded');
-
-
--- positions
-
-insert into positions (posId, posName) VALUES
-('P', 'Pitcher'),
-('C', 'Catcher'),
-('1B', 'First Base'),
-('2B', 'Second Base'),
-('3B', 'Third Base'),
-('SS', 'Short Stop'),
-('CF', 'Center Field'),
-('LF', 'Left Field'),
-('RF', 'RightField');
-
--- user levels
-
-insert into userLevels (ulvId, ulvDescription) VALUES
-(1, 'Viewer'),
-(2, 'Tutor'),
-(3, 'Coach'),
-(4, 'Scorekeeper'),
-(5, 'Admin');
-
 -- Persons
 -- Coaches
 INSERT INTO persons (perFirstName,perLastName) VALUES 
@@ -1268,6 +1230,4 @@ insert into users(perId, ulvId, usrEmail, usrPassword) values
 (374, 5,'frostman@yahoo.ca'   , SHA1('12345'));
 
 insert into userPlayer(plaId, usrId) values
-(350, 1);
-
-
+(330, 1);
