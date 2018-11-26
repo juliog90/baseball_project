@@ -26,13 +26,13 @@ class CategoryTests extends TestCase
     {
         $category = new Category(1);
         $category->setName("Hola");
-        $this->assertTrue($category->update());
+        $this->assertTrue($category->edit());
     }
 
     public function testAddCategory()
     {
         $category = new Category();
         $category->setName("Hola");
-        $category->assertTrue($category->add());
+        $this->assertTrue($category->add());
     }
 }
