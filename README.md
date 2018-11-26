@@ -1,4 +1,4 @@
-# baseball_project
+# Proyecto Administracion de Jugadores de Baseball
 Baseball Web App
 
 Aplicacion para administrar jugadores de baseball.
