@@ -10,7 +10,7 @@ class TeamTests extends TestCase
         $this->assertNotNull($team);
     }
 
-    public function testAllDbCategorys()
+    public function testAllDbTeams()
     {
         $this->assertNotNull(Team::getAll());
     }
@@ -26,6 +26,10 @@ class TeamTests extends TestCase
     {
         $team = new Team(1);
         $team->setName("Hola");
+        $team->setCategory(1);
+        $team->setCoach(1);
+        $team->setImage("hola.png");
+        $team->setSeason(1);
         $this->assertTrue($team->edit());
     }
 
@@ -33,6 +37,10 @@ class TeamTests extends TestCase
     {
         $team = new Team();
         $team->setName("Hola");
+        $team->setCategory(1);
+        $team->setCoach(1);
+        $team->setImage("hola.png");
+        $team->setSeason(1);
         $this->assertTrue($team->add());
     }
 }
