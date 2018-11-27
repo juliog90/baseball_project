@@ -867,7 +867,7 @@ insert into teams(staId, teaName, teaImage, catId, coaId, seaId) values
 -- Categoria Colt
 (1, 'Nuggets', 'team21.png', 1, 21, 36),
 (1, 'Rampage', 'team22.png', 1, 22, 36),
-(1, 'Marlins', 'team23.png', 1, 23, 36),
+(1, 'Bulldozers', 'team23.png', 1, 23, 36),
 (1, 'Saints', 'team24.png', 1, 24, 36),
 -- Categoria Juvenil
 (1, 'Sounders', 'team25.png', 1, 25, 36),
