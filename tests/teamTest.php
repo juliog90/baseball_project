@@ -15,10 +15,22 @@ class TeamTests extends TestCase
         $this->assertNotNull(Team::getAll());
     }
 
-    public function testDelTeam()
+    public function testAddTeam()
+    {
+        $team = new Team();
+        $team->setName("Hola");
+        $cat = new Category(1);
+        $team->setCategory($cat);
+        $team->setCoach(1);
+        $team->setImage("hola.png");
+        $team->setSeason(1);
+        $this->assertTrue($team->add());
+    }
+
+    public function testDelUsedTeam()
     {
         $team = new Team(2);
-        $this->assertTrue($team->delete());
+        $this->assertFalse($team->delete());
 
     }
 
@@ -26,21 +38,12 @@ class TeamTests extends TestCase
     {
         $team = new Team(1);
         $team->setName("Hola");
-        $team->setCategory(1);
+        $cat = new Category(3);
+        $team->setCategory($cat);
         $team->setCoach(1);
         $team->setImage("hola.png");
         $team->setSeason(1);
         $this->assertTrue($team->edit());
     }
 
-    public function testAddTeam()
-    {
-        $team = new Team();
-        $team->setName("Hola");
-        $team->setCategory(1);
-        $team->setCoach(1);
-        $team->setImage("hola.png");
-        $team->setSeason(1);
-        $this->assertTrue($team->add());
-    }
 }
