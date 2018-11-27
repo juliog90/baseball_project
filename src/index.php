@@ -2,6 +2,7 @@
     
     //get request URI
     $requestUri = $_SERVER['REQUEST_URI']; 
+    var_dump($requestUri);
     //split uri parts
     $uriParts = explode('/', $requestUri);
     //get URI info
