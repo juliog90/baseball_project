@@ -104,7 +104,7 @@ class Team {
         return $teamPlayers;
     }
 
-    public function getAll()
+    public static function getAll()
     {
         $allTeams = array();
         $connection = MySqlConnection::getConnection();
