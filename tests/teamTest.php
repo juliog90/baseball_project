@@ -21,9 +21,11 @@ class TeamTests extends TestCase
         $team->setName("Hola");
         $cat = new Category(1);
         $team->setCategory($cat);
-        $team->setCoach(1);
+        $coa = new Coach(1);
+        $team->setCoach($coa);
         $team->setImage("hola.png");
-        $team->setSeason(1);
+        $sea = new Season(1);
+        $team->setSeason($sea);
         $this->assertTrue($team->add());
     }
 
@@ -40,9 +42,11 @@ class TeamTests extends TestCase
         $team->setName("Hola");
         $cat = new Category(3);
         $team->setCategory($cat);
-        $team->setCoach(1);
+        $coa = new Coach(1);
+        $team->setCoach($coa);
+        $sea = new Season(1);
+        $team->setSeason($sea);
         $team->setImage("hola.png");
-        $team->setSeason(1);
         $this->assertTrue($team->edit());
     }
 
