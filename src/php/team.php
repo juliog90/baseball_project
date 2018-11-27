@@ -184,7 +184,7 @@ class Team {
 
     public function delete()
     {
-        // delete category 
+        // delete team 
         $connection = MySqlConnection::getConnection(); 
         $statement = 'delete from teams where teaId = ?';    
         $command = $connection->prepare($statement);
