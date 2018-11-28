@@ -53,7 +53,7 @@ class LineUp {
                 $this->id = $id;
                 $this->player = new Player($player);
                 $this->team = new Team($team);
-                $this->turn = turn;
+                $this->turn = $turn;
                 $this->position = $position;
                 $this->match = $match;
             } 
@@ -80,7 +80,7 @@ class LineUp {
     {
         $lineups = array();
         $connection = MySqlConnection::getConnection();
-        $query = 'select lupId, plaId, teaId, lupBattlingTurn, posId, matId from lineups';
+        $query = 'select lupId, plaId, teaId, lupBattingTurn, posId, matId from lineups';
         $command = $connection->prepare($query);
         $command->execute();
         $command->bind_result($id, $player, $team, $turn, $position, $match);
@@ -125,7 +125,7 @@ class LineUp {
     {
         // delete lineup 
         $connection = MySqlConnection::getConnection(); 
-        $statement = 'delete from lineups where linId = ?';    
+        $statement = 'delete from lineups where lupId = ?';    
         $command = $connection->prepare($statement);
         $id = $this->id;
         $command->bind_param('i', $id);
@@ -142,14 +142,13 @@ class LineUp {
         $connection = MySqlConnection::getConnection();
         $statement = 'update lineups set plaId = ?, teaId = ?, lupsBattingTurn = ?, posId = ?, matId = ? where linId = ?';
         $command = $connection->prepare($statement);
+        $player = $this->player->getId();
+        $team = $this->team->getId();
+        $turn = $this->turn;
+        $position = $this->position;
+        $match = $this->match;
         $id = $this->id;
-        $status = $this->status;
-        $name = $this->name;
-        $image = $this->image;
-        $categoryId = $this->category->getId();
-        $coachId = $this->coach->getId();
-        $seasonId = $this->season->getId();
-        $command->bind_param('issiiii',$status, $name, $image, $categoryId, $coachId, $seasonId, $id);
+        $command->bind_param('iiisii',$player, $team, $turn, $position, $match, $id);
         $result = $command->execute();
         mysqli_stmt_close($command);
         $connection->close();
@@ -160,13 +159,15 @@ class LineUp {
     public function add()
     {
         $connection = MySqlConnection::getConnection();
-        $statement = 'insert into lineups(plaId, teaId, lupsBattingTurn, posId, matId values(?, ?, ?, ?, ?)';
+        $statement = 'insert into lineups(plaId, teaId, lupBattingTurn, posId, matId) values (?, ?, ?, ?, ?)';
+
         $command = $connection->prepare($statement);
         $player = $this->player->getId();
         $team = $this->team->getId();
         $turn = $this->turn;
         $position = $this->position;
         $match = $this->match;
+        
         $command->bind_param('iiisi',$player, $team, $turn, $position, $match);
         $result = $command->execute();
 
