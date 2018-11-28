@@ -5,11 +5,11 @@ require_once('php/exceptions/recordnotfoundexception.php');
 // get
 if($_SERVER['REQUEST_METHOD'] == 'GET')
 {
-    if(isset($_GET['idTeam']))
+    if($parameters != '')
     {
         try
         {
-            $t = new Team($_GET['idTeam']);
+            $t = new Team($parameters);
 
             echo json_encode(array(
                 'status' => 0,
