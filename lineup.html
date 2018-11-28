@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!-- <script src="js/lineup.js"></script> -->
+    <script src="js/lineup.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Line Up</title>
   </head>
-  <body>
+  <body onload="lineup()">
     <header>
       <div id="menuicon">
         <button><img id="menuImage" src="images/menu.png" alt="menu"></button>
@@ -28,5 +28,6 @@
             <a class="leftMenuOptions" href="#">Logout</a>
         </ul>
     </div>
+    <p id='error'>Error</p>
   </body>
 </html>
