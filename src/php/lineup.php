@@ -104,7 +104,7 @@ class LineUp {
         }
 
         return json_encode(array(
-            'lineups' => $lineupsJons;
+            'lineups' => $lineupsJons
         ));
 
 	return $lineupsJson;
