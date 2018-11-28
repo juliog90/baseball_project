@@ -1307,6 +1307,7 @@ insert into matches(catId, matHomeTeam, matGuestTeam, matField, matStartTime, ma
 (1,27, 26,'Baby Ruth','2000-10-10','2000-10-10', 3,9 ),
 (1,28, 27,'Baby Ruth','2000-10-10','2000-10-10', 9,4 ),
 (1,28, 25,'Baby Ruth','2000-10-10','2000-10-10', 4,10);
+
 insert into users(perId, ulvId, usrEmail, usrPassword) values
 (365, 1,'bdthomas@gmail.net'  , SHA1('12345')),
 (366, 1,'bogjobber@gmail.com' , SHA1('12345')),
@@ -1321,7 +1322,6 @@ insert into users(perId, ulvId, usrEmail, usrPassword) values
 
 insert into userPlayer(plaId, usrId) values
 (330, 1);
-
 
 insert into lineups(plaId, teaId, lupBattingTurn, posId, matId) values
 (6, 1, 1, '1B', 1),
