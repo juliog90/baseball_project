@@ -10,6 +10,7 @@ return array(
     'Category' => $baseDir . '/src/php/category.php',
     'Coach' => $baseDir . '/src/php/coach.php',
     'DisplayMatches' => $baseDir . '/src/php/displayMatches.php',
+    'LineUp' => $baseDir . '/src/php/lineup.php',
     'MySqlConnection' => $baseDir . '/src/php/connection.php',
     'PHPUnit\\Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit\\Framework\\Assert' => $vendorDir . '/phpunit/phpunit/src/Framework/Assert.php',

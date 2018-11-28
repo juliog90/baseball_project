@@ -62,6 +62,7 @@ class ComposerStaticInitd00a31149c38a76636f938645b07d0fc
         'Category' => __DIR__ . '/../..' . '/src/php/category.php',
         'Coach' => __DIR__ . '/../..' . '/src/php/coach.php',
         'DisplayMatches' => __DIR__ . '/../..' . '/src/php/displayMatches.php',
+        'LineUp' => __DIR__ . '/../..' . '/src/php/lineup.php',
         'MySqlConnection' => __DIR__ . '/../..' . '/src/php/connection.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
