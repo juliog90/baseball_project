@@ -7,4 +7,6 @@ before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS baseball;'  
   - mysql -u root --default-character-set=utf8 baseball < database/z_full_script.sql
 script: 
+  - rm src/php/connection.php
+  - mv src/php/connection_travis.php src/php/connection.php
   - vendor/bin/phpunit --testdox tests
