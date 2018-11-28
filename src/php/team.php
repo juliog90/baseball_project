@@ -4,6 +4,7 @@ require_once('category.php');
 require_once('season.php');
 require_once('coach.php');
 require_once('connection.php');
+require_once('player.php');
 require_once('exceptions/recordnotfoundexception.php');
 
 class Team {
@@ -88,20 +89,27 @@ class Team {
     {
         $teamPlayers = array();
         $connection = MySqlConnection::getConnection();
-        $query = 'select plaId, staId, teaId, plaNickname, perFirstName, perLastName, plaBirthdate,plaDebut, plaImage, plaNumber from players inner join persons on players.perId = persons.perId where teaId = ?';
+        $query = 'select plaId, players.perId, staId, teaId, plaNickname, perFirstName, perLastName, plaBirthDate, plaDebut, plaImage, plaNumber from players inner join persons  on players.perId = persons.perId where teaId = ?';
+
         $command = $connection->prepare($query);
         $teamId = $this->id;
         $command->bind_param('i', $teamId);
         $command->execute();
-        $command->bind_result($id, $status, $team, $nickname, $firstName, $lastName, $birthdate, $debut, $image, $number);
+        $command->bind_result($id, $person, $status, $team, $nickname, $firstName, $lastName, $birthdate, $debut, $image, $number);
         while($command->fetch())
         {
-            array_push($teamPlayers, new Player($id), $status, new Team($team), $nickname, $firstName, $lastName, $birthdate, $debut, $image, $number);
+            array_push($teamPlayers, new Player($id, new Person($person), $status, new Team($team), $nickname, $birthdate, $debut, $image, $number));
         }
         mysqli_stmt_close($command);
         $connection->close();
+        $playersJson = array();
 
-        return $teamPlayers;
+        foreach($teamPlayers as $value)
+        {
+            array_push($playersJson, json_decode($value->toJson()));
+        }
+
+        return json_encode($playersJson);
     }
 
     public static function getAll()
@@ -142,10 +150,11 @@ class Team {
     public function getPlayersToJson()
     {
         $playersJson = array();
+        $players = self::getPlayers();
 
-        foreach(self::getPlayers() as $player)
+        foreach($players as $value)
         {
-            array_push($playersJson, json_decode($player->toJson()));
+            array_push($playersJson, json_decode($value->toJson()));
         }
 
         return json_encode($playersJson);
