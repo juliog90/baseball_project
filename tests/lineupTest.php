@@ -18,7 +18,7 @@ class LineUpTests extends TestCase
     public function testAddLineUp()
     {
         $lineup = new LineUp();
-        $lineup->setPostion(1);
+        $lineup->setPosition('3');
         $tea = new Team(1);
         $lineup->setTeam($tea);
         $pla = new Player(1);
@@ -28,17 +28,17 @@ class LineUpTests extends TestCase
         $this->assertTrue($lineup->add());
     }
 
-    public function testDelUsedLineUp()
+    public function testDelLineUp()
     {
-        $lineup = new LineUp(2);
-        $this->assertFalse($lineup->delete());
+        $lineup = new LineUp(5);
+        $this->assertTrue($lineup->delete());
 
     }
 
     public function testUpdLineUp()
     {
-        $lineup = new LineUp(2);
-        $lineup->setPostion(1);
+        $lineup = new LineUp(3);
+        $lineup->setPosition(1);
         $tea = new Team(1);
         $lineup->setTeam($tea);
         $pla = new Player(1);
