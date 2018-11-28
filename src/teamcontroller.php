@@ -24,25 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
                 'details' => $ex->getMessage()
             ));
         }
-    }
-    else if(isset($_GET['idTeamPlay']) && isset($_GET['playTeam'])) {
-        try
-        {
-            $t = new Team($_GET['idTeamPlay']);
 
-            echo json_encode(array(
-                'status' => 0,
-                'players' => json_decode($t->getPlayers())
-            ));
-        }       
-        catch(RecordNotFoundException $ex)
-        {
-            echo json_encode(array(
-                'status' => 2,
-                'errorMessage' => 'Invalid team id',
-                'details' => $ex->getMessage()
-            ));
-        }
     }
     else
     {
@@ -52,7 +34,6 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
         ));
     }
 }
-
 
 // post
 if($_SERVER['REQUEST_METHOD'] == 'POST')
