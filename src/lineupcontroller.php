@@ -28,9 +28,10 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
     }
     else
     {
+        $line = new LineUp($parameters);
         echo json_encode(array(
             'status' => 0,
-            'lineups' => json_decode(LineUp::getAllToJson())
+            'lineups' => json_decode($line->getAllPlayerToJson)
         ));
     }
 }

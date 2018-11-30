@@ -1,7 +1,7 @@
 <?php
 
 require_once('team.php');
-/* require_once('matches.php'); */
+require_once('matches.php');
 require_once('player.php');
 require_once('exceptions/recordnotfoundexception.php');
 
@@ -124,20 +124,31 @@ class LineUp {
         return json_encode($jsonPlayers);
     }
 
-    public static function getAllToJson()
+    public static function getAllPlayerToJson($team, $match)
     {
         $lineupsJson = array();
         $lineups = self::getAll();
 
-        foreach ($lineups as $value) {
-            array_push($lineupsJson, json_decode($value->toJson()));
+        $connection = MySqlConnection::getConnection();
+        $query = 'select lupId from lineups where teaId = ? and matId = ?';
+        $command = $connection->prepare($query);
+
+        $command->bind_param('ii', $team, $match);
+        $command->execute();
+
+        $command->bind_result($id);
+        while($command->fetch()) {
+            array_push($lineups, new LineUp($id));
+        } 
+
+        $jsonLineUps = array();
+
+        foreach($lineups as $lineup) 
+        {
+            array_push($jsonLineups, json_decode($lineup->toJson()));
         }
 
-        return json_encode(array(
-            'lineups' => $lineupsJons
-        ));
-
-	return $lineupsJson;
+        return json_encode($jsonLineups);
     }
 
     public function toJson() {
@@ -158,7 +169,7 @@ class LineUp {
         $statement = 'delete from lineups where lupId = ?';    
         $command = $connection->prepare($statement);
         $id = $this->id;
-        $command->bind_param('i', $id);
+        $command->bind_param('i', $id)
         $result = $command->execute();
 
         mysqli_stmt_close($command);
@@ -167,10 +178,11 @@ class LineUp {
         return $result;
     }
 
-    public function edit()
+    public function edit($teamFilter, $matchFilter)
     {
         $connection = MySqlConnection::getConnection();
-        $statement = 'update lineups set plaId = ?, teaId = ?, lupsBattingTurn = ?, posId = ?, matId = ? where linId = ?';
+        $statement = 'update lineups set plaId = ?, teaId = ?, lupsBattingTurn = ?, posId = ?, matId = ?
+            where matId = ? and teaId = ? and lupId = ?';
         $command = $connection->prepare($statement);
         $player = $this->player->getId();
         $team = $this->team->getId();
@@ -178,7 +190,7 @@ class LineUp {
         $position = $this->position;
         $match = $this->match;
         $id = $this->id;
-        $command->bind_param('iiisii',$player, $team, $turn, $position, $match, $id);
+        $command->bind_param('iiisiiii',$player, $team, $turn, $position, $match, $teamFilter, $matchFilter, $id);
         $result = $command->execute();
         mysqli_stmt_close($command);
         $connection->close();
