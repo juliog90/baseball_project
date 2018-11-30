@@ -1,7 +1,9 @@
 <?php
 require_once('connection.php');
 require_once('team.php');
-require_once('category.php');
+require_once('player.php');
+require_once('lineup.php');
+
 
 
 require_once('exceptions/recordnotfoundexception.php');
@@ -167,28 +169,41 @@ class Match
         return $list; 
 
      }
-
-     public function getCategories(){
-		    $list =array();
-			//get connection
-			$connection=MySqlConnection::getConnection();
-			//query
-			$query='select catId,catName FROM categories WHERE catId = ?';
-			//prepare statement
-			$command=$connection->prepare($query);
-			//parameter
-			$command->bind_param('i',$this->category);
-			//execute
-			$command->execute();
-			//blind results
-			$command->bind_result($category);
-			//fetch data
-			while($command ->fetch()){
-				array_push($list, new Category($category));
-			}
-			//add items to array
-			return $list;
-		}
+     public function getLineups(){
+        $list = array();
+         //get connection
+         $connection = MySqlConnection::getConnection();
+         //query
+         $query='select l.lupId,pl.plaId, l.teaId,lupBattingTurn,l.posId,m.catId,matHomeTeam,matGuestTeam,matField,
+         matStartTime,matEndTime,matRunsHomeTeam,matRunsGuestTeam,plaImage, planumber ,perFirstName,perLastName
+         from lineups l join matches m 
+         on m.matId = l.matId
+         join players pl on l.plaId = pl.plaId
+         join persons p on pl.perId = p.perId
+         where m.matHomeTeam = l.teaId and m.matId = ?';
+         
+        //prepare statement
+        $command = $connection->prepare($query);
+        //bind params
+        $linId=$this->id;
+        $command->bind_param('i', $linId);
+        //execute
+        $command->execute();
+        //bind results
+        $command->bind_result($liId, $plaId, $battingTurn, $liPos,$category,$homeTeam,$guestTeam,$matfield,$startTime,$endTime,$runsHomeTeam,$runsGuestTeam,$image,$number,$perId,$firstName,$lastName);
+        //fetch data
+        while ($command->fetch()) {
+            //add contact to list
+            array_push($list, new LineUp($liId, $battingTurn,$liPos), new Player($plaId,$image,$number),new Person($perId,$firstName,$lastName),$category,$field,$homeTeam,$guestTeam,$startTime,$endTime,$runsHomeTeam,$runsGuestTeam);
+        }
+        //close command
+        mysqli_stmt_close($command);
+        //close connection
+        $connection->close();
+        //return list
+        return $list; 
+    }
+     
      public static function getAllToJson(){
             $jsonArray = array(); //array
             foreach(self::getAll() as $item){
