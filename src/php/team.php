@@ -186,7 +186,7 @@ class Team {
             'name'=>$this->name,
             'category'=>json_decode($this->category->toJson()),
             'coach' => json_decode($this->coach->toJson()),
-            'image' => 'http://' . $_SERVER['HTTP_HOST'] . '/photos/' . $this->image,
+            'image' => 'http://' . $_SERVER['HTTP_HOST'] . '/baseball_project/src/photos/' . $this->image,
             'season' => json_decode($this->season->toJson())
         ));
     }
