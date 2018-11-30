@@ -121,26 +121,26 @@ class Match
         ));
     }
 
-    // public function toJson(){
-	// 	//Categories
-	// 	$list=array();
-		
-	// 	foreach($this->getCategories() as $items)
-	// 	{
-	// 		array_push($jsonArrays, json_decode($items->toJson()));
-	// 	}
-	// 	return json_encode(array(
-    //         'id'=>$this->id,
-    //         'category'=>$list,
-    //         'homeTeam'=>$this->homeTeam,
-    //         'guestTeam'=>$this->guestTeam,
-    //         'field'=>$this->field,
-    //         'startTime'=>$this->startTime,
-    //         'endTime'=>$this->endTime,
-    //         'runsHomeTeam'=>$this->runsHomeTeam,
-    //         'runsGuestTeam'=>$this->runsGuestTeam,
-	// 	));
-	// }
+    public function toJsonFull(){
+        
+        //lineups
+        $line = array();
+        foreach($this->getLineups() as $item){
+            array_push($line, json_decode($item->toJson()));
+        }
+        return json_encode(array(
+            'id'=>$this->id,
+            'category'=>$this->category,
+            'homeTeam'=>$this->$line,
+            'guestTeam'=>$this->guestTeam,
+            'field'=>$this->field,
+            'startTime'=>$this->startTime,
+            'endTime'=>$this->endTime,
+            'runsHomeTeam'=>$this->runsHomeTeam,
+            'runsGuestTeam'=>$this->runsGuestTeam,
+           
+        ));
+    }
     //add match
     public function add(){
         $list = array();
@@ -194,7 +194,7 @@ class Match
         //fetch data
         while ($command->fetch()) {
             //add contact to list
-            array_push($list, new LineUp($liId, $battingTurn,$liPos), new Player($plaId,$image,$number),new Person($perId,$firstName,$lastName),$category,$field,$homeTeam,$guestTeam,$startTime,$endTime,$runsHomeTeam,$runsGuestTeam);
+            array_push($list, new LineUp($liId, $battingTurn,$liPos), new Player($plaId,$image,$number),new Person($perId,$firstName,$lastName),$category,$matfield,$homeTeam,$guestTeam,$startTime,$endTime,$runsHomeTeam,$runsGuestTeam);
         }
         //close command
         mysqli_stmt_close($command);
