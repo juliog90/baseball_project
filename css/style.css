@@ -144,3 +144,8 @@ header {
 #menuImage {
     height: 32px;
 }
+
+#teamBigPhoto {
+    display: block;
+    height: 100%;
+}
