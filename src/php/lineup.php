@@ -94,6 +94,36 @@ class LineUp {
         return $lineups;
     }
 
+    public function getPlayers()
+    {
+        $players = array();
+        $connection = MySqlConnection::getConnection();
+        $query = 'select players.plaId from players inner join lineups
+                  on lineups.plaId = players.plaId where lineups.lupId = ?';
+        $command = $connection->prepare($query);
+        $linId = $this->id;
+
+        $command->bind_param('i', $linId);
+        $command->execute();
+
+        $command->bind_result($id);
+
+        while($command->fetch())
+        {
+            array_push($players, new Player($id));
+        }
+        
+        $jsonPlayers = array();
+
+        foreach($players as $player) 
+        {
+            array_push($jsonPlayers, json_decode($player->toJson()));
+
+        }
+
+        return json_encode($jsonPlayers);
+    }
+
     public static function getAllToJson()
     {
         $lineupsJson = array();
@@ -113,11 +143,11 @@ class LineUp {
     public function toJson() {
         return json_encode(array(
             'id'=>$this->id,
-            'team' => $this->team->toJson(),
+            'team' => json_decode($this->team->toJson()),
             'turn'=> $this->turn,
             'position'=> $this->position,
             'match' => $this->match,
-            'player' => $this->player->toJson(),
+            'players' => json_decode($this->getPlayers()),
         ));
     }
 

@@ -18,6 +18,8 @@ header("Access-Control-Headers: ");
             case strtolower('stat') : require_once('statcontroller.php');break;
             case strtolower('displaymatches') : require_once('displaymatchescontroller.php');break;
             case strtolower('teamplayers') : require_once('teamplayerscontroller.php');break;
+            case strtolower('lineup') : require_once('lineupcontroller.php');break;
+            case strtolower('matches') : require_once('matchescontroller.php');break;
             default:
              echo json_encode(array(
              'status' => 999, 

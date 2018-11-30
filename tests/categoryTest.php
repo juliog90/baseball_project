@@ -15,10 +15,10 @@ class CategoryTests extends TestCase
         $this->assertNotNull(Category::getAll());
     }
 
-    public function testDelCategory()
+    public function testUsedDelCategory()
     {
-        $category = new Category(2);
-        $this->assertTrue($category->delete());
+        $category = new Category(3);
+        $this->assertFalse($category->delete());
 
     }
 
