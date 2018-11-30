@@ -82,3 +82,4 @@ insert into matches(catId, matHomeTeam, matGuestTeam, matField, matStartTime, ma
 (5,27, 26,'Melchor Javier','2000-10-10','2000-10-10', 3,9 ),
 (5,28, 27,'Melchor Javier','2000-10-10','2000-10-10', 9,4 ),
 (5,28, 25,'Melchor Javier','2000-10-10','2000-10-10', 4,10);
+(5,28, 26,'Melchor Javier','2000-10-10','2000-10-10', 4,7);
