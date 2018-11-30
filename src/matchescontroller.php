@@ -3,9 +3,9 @@
 
 //get 
 if($_SERVER['REQUEST_METHOD']=='GET'){
-    if(isset($_GET['id'])){
+    if($parameters != ""){
         try{
-            $c = new Match($_GET['id']);
+            $c = new Match($parameters);
             echo json_encode(array(
                 'status'=>0,
                 'matches'=> json_decode($c->toJson())
