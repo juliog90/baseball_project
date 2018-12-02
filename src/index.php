@@ -1,8 +1,9 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Headers: ");
+header("Access-Control-Headers: newSea");
 
 
+    $headers = getallheaders();
     //get request URI
     $requestUri = $_SERVER['REQUEST_URI']; 
     //split uri parts

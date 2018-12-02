@@ -1,11 +1,11 @@
 <?php 
-require_once('php/season.php');
-require_once('php/exceptions/recordnotfoundexception.php');
+require_once('src/php/season.php');
+require_once('src/php/exceptions/recordnotfoundexception.php');
 
 // get
 if($_SERVER['REQUEST_METHOD'] == 'GET')
 {
-    if(isset($_GET['idSeason']))
+    if($parameters != '')
     {
         try
         {
@@ -39,14 +39,16 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $parametersOk = false;
+    $newSea = $headers['newSea'];
+    var_dump($headers);
 
-   if(isset($_POST['nameSeason']))
+   if(isset($newSea))
    {
        $parametersOk = true;
 
        $c = new Season();
 
-       $c->setName($_POST['nameSeason']);
+       $c->setName($newSea);
 
        if($c->add())
        {       
