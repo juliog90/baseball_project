@@ -1,6 +1,6 @@
 <?php 
-require_once('src/php/season.php');
-require_once('src/php/exceptions/recordnotfoundexception.php');
+require_once('php/season.php');
+require_once('php/exceptions/recordnotfoundexception.php');
 
 // get
 if($_SERVER['REQUEST_METHOD'] == 'GET')
@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
     {
         try
         {
-            $c = new Season($_GET['idSeason']);
+            $c = new Season($parameters);
 
             echo json_encode(array(
                 'status' => 0,
@@ -40,7 +40,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $parametersOk = false;
     $newSea = $headers['newSea'];
-    var_dump($headers);
 
    if(isset($newSea))
    {
@@ -80,8 +79,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
     $parametersOk = false;
 
-    parse_str(file_get_contents("php://input"), $jsonData);
-    $post_vars = json_decode($jsonData['dataSeason'], true);
+    $post_vars = json_decode(file_get_contents("php://input"), true);
 
     if(isset($post_vars['idSeason']) && isset($post_vars['nameSeason'])) 
     {
@@ -136,8 +134,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 if($_SERVER['REQUEST_METHOD'] == 'DELETE')
 {
-    parse_str(file_get_contents("php://input"), $jsonData);
-    $post_vars = json_decode($jsonData['dataSeasonDelete'], true);
+    $post_vars = json_decode(file_get_contents("php://input"), true);
 
     $parametersOk = false;
 

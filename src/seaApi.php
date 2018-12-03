@@ -138,6 +138,7 @@ if($_SERVER['REQUEST_METHOD'] == 'DELETE')
     $post_vars = json_decode($jsonData['dataSeasonDelete'], true);
 
     $parametersOk = false;
+    var_dump($post_vars);
 
     if(isset($post_vars['idSeason']))
     {
