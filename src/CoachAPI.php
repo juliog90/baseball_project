@@ -24,7 +24,7 @@
         {
             echo json_encode(array(
                 'status' => 0,
-                'players' => json_decode(Coach::getAllToJson())
+                'coaches' => json_decode(Coach::getAllToJson())
             ));
         }
     }

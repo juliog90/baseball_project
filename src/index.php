@@ -1,6 +1,5 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Headers: newSea");
 
 
     $headers = getallheaders();
@@ -21,6 +20,8 @@ header("Access-Control-Headers: newSea");
             case strtolower('teamplayers') : require_once('teamplayerscontroller.php');break;
             case strtolower('lineup') : require_once('lineupcontroller.php');break;
             case strtolower('matches') : require_once('matchescontroller.php');break;
+            case strtolower('coaches') : require_once('coachcontroller.php');break;
+            case strtolower('player') : require_once('playercontroller.php');break;
             default:
              echo json_encode(array(
              'status' => 999, 

@@ -5,11 +5,11 @@ require_once('php/exceptions/recordnotfoundexception.php');
 // get
 if($_SERVER['REQUEST_METHOD'] == 'GET')
 {
-    if(isset($_GET['idCategory']))
+    if($parameters != '')
     {
         try
         {
-            $c = new Category($_GET['idCategory']);
+            $c = new Category($parameters);
 
             echo json_encode(array(
                 'status' => 0,
@@ -24,7 +24,6 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
                 'details' => $ex->getMessage()
             ));
         }
-
     }
     else
     {
@@ -40,61 +39,59 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $parametersOk = false;
 
-   if(isset($_POST['nameCategory']))
-   {
-       $parametersOk = true;
+    if($headers['newCat'])
+    {
+        $parametersOk = true;
 
-       $c = new Category();
+        $c = new Category();
 
-       $c->setName($_POST['nameCategory']);
+        $c->setName($headers['newCat']);
 
-       if($c->add())
-       {       
-           echo json_encode(array(
-               'status' => 0,
-               'message' => 'Category added successfully'
-           ));
-       }       
-       else
-       {   
-           echo json_encode(array(
-               'status' => 2,
-               'errorMessage' => 'Could not add category'
-           ));
-       }   
-   }
+        if($c->add())
+        {       
+            echo json_encode(array(
+                'status' => 0,
+                'message' => 'Category added successfully'
+            ));
+        }       
+        else
+        {   
+            echo json_encode(array(
+                'status' => 2,
+                'errorMessage' => 'Could not add category'
+            ));
+        }   
+    }
 
-   if(!$parametersOk)
-   {
-       echo json_encode(array(
-           'status' => 1,
-           'errorMessage' => 'Missing parameters'
-       ));
-   }
+    if(!$parametersOk)
+    {
+        echo json_encode(array(
+            'status' => 1,
+            'errorMessage' => 'Missing parameters'
+        ));
+    }
 
 }   
 
 if($_SERVER['REQUEST_METHOD'] == 'PUT')
 {
-    $parametersOk = false;
 
-    parse_str(file_get_contents("php://input"), $jsonData);
-    if(isset($jsonData['dataCategory'])){
-        $post_vars = json_decode($jsonData['dataCategory'], true);
-        if(isset($post_vars['idCategory']) && isset($post_vars['nameCategory'])) 
+    $post_vars = json_decode(file_get_contents("php://input"), true);
+
+    if(isset($post_vars['idCategory']) && isset($post_vars['nameCategory'])) 
     {
         $parametersOk = true;
 
-	$right = true;
+        $right = true;
 
         try
         {
-	    $c = new Category($post_vars['idCategory']);
-	    $c->setName($post_vars['nameCategory']);
+            $c = new Category($post_vars['idCategory']);
+            $c->setName($post_vars['nameCategory']);
         }       
         catch(RecordNotFoundException $ex)
         {
-	    $right = false;
+            $right = false;
             echo json_encode(array(
                 'status' => 2,
                 'errorMessage' => 'Invalid category id',
@@ -103,87 +100,78 @@ if($_SERVER['REQUEST_METHOD'] == 'PUT')
         }
         if($right)
         {
-            
-	    if($c->edit())
-	    {       
-		echo json_encode(array(
-		    'status' => 0,
-		    'message' => 'Category updated successfully'
-		));
-	    }       
-	    else
-	    {   
-		echo json_encode(array(
-		    'status' => 2,
-		    'errorMessage' => 'Could not update category'
-		));
-	    }   
+
+            if($c->edit())
+            {       
+                echo json_encode(array(
+                    'status' => 0,
+                    'message' => 'Category updated successfully'
+                ));
+            }       
+            else
+            {   
+                echo json_encode(array(
+                    'status' => 2,
+                    'errorMessage' => 'Could not update category'
+                ));
+            }   
         }
     }
     if(!$parametersOk)
-        {
-            echo json_encode(array(
-                'status' => 1,
-                'errorMessage' => 'Missing parameters'
-            ));
-        }
-    }else{
+    {
         echo json_encode(array(
-            'status' => 999,
-            'errorMessage' => 'Missing data variable'
+            'status' => 1,
+            'errorMessage' => 'Missing parameters'
         ));
     }
-
-    
 }
 
 if($_SERVER['REQUEST_METHOD'] == 'DELETE')
 {
-    parse_str(file_get_contents("php://input"), $jsonData);
-    $post_vars = json_decode($jsonData['data'], true);
+    $post_vars = json_decode(file_get_contents("php://input"), true);
     $parametersOk = false;
 
     if(isset($post_vars['idCategory']))
     {
         $parametersOk = true;
-	$right = true;
+        $right = true;
 
-	try
-	{
-	    $c = new Category($post_vars['idCategory']);
-	}	
-	catch(RecordNotFoundException $ex)
-	{
-	    $right = false;
+        try
+        {
+            $c = new Category($post_vars['idCategory']);
+        }	
+        catch(RecordNotFoundException $ex)
+        {
+            $right = false;
             echo json_encode(array(
                 'status' => 2,
                 'errorMessage' => 'Invalid category id',
                 'details' => $ex->getMessage()
             ));
-	}
+        }
 
-	if($right)
-	{		
-	    try
-	    {       
+        if($right)
+        {		
+            try
+            {       
                 if($c->delete())
                 {
                     echo json_encode(array(
                         'status' => 0,
-                        'message' => 'Team deleted successfully'
+                        'message' => 'Category deleted successfully'
                     ));
                 }
                 else
                 {
                     echo json_encode(array(
                         'status' => 2,
-                        'errorMessage' => 'Could not delete category'
+                        'errorMessage' => 'Could not delete Category'
                     ));
 
                 }
-	    }       
-	    catch(mysqli_sql_exception $ex)
-	    {   
+            }       
+            catch(mysqli_sql_exception $ex)
+            {   
                 $error = $ex->getCode();
                 if($error == 1451)
                 {
@@ -199,10 +187,10 @@ if($_SERVER['REQUEST_METHOD'] == 'DELETE')
                         'errorMessage' => $ex->getMessage(),
                     ));
                 }
-	    }   
-	}
+            }   
+        }
     }
-    
+
     if(!$parametersOk)
     {
         echo json_encode(array(

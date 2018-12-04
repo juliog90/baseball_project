@@ -170,7 +170,7 @@ if($_SERVER['REQUEST_METHOD'] == 'DELETE')
                 {
                     echo json_encode(array(
                         'status' => 0,
-                        'message' => 'Team deleted successfully'
+                        'message' => 'Category deleted successfully'
                     ));
                 }
                 else
@@ -189,7 +189,7 @@ if($_SERVER['REQUEST_METHOD'] == 'DELETE')
                 {
                     echo json_encode(array(
                         'status' => 999,
-                        'errorMessage' => 'Delete Category Teams',
+                        'errorMessage' => 'Delete Category'
                     ));
                 }
                 else
