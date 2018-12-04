@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Standings</title>
+	<link rel="stylesheet" type="text/css" href="css/style2.css">
+	<link rel="stylesheet" type="text/css" href="css/chart.css">
+	<script type="text/javascript" src="js/hijo.js"></script>
+</head>
+	<body onload="initx();">
+		<header>
+			<div id="headertext">Column Chart</div>
+		</header>
+		<div id="content">
+			<nav id="listPlayer">
+				<div id="nameTeam">
+					<h4>Childrens</h4>
+				</div>
+				<div id="plName"></div>
+			</nav>
+			<div id="conten-info-player">
+				<div id="inf-perso-Player">
+					<table id="tbplayer">
+						<tr>
+							<td rowspan="3" id="plImg"><img src="img/user.png" id="userNone"></td>
+							<td width="800px;"><b>Categori:</b><span id="plCategory"> </span> </td>
+							<td rowspan="2"><img src="img/Imagen1.png" width="50px"></td>
+						</tr>
+						<tr>
+							<td><b>Numero:</b> <span id="plNum"></span></td>
+						</tr>
+						<tr>
+							<td colspan="1" rowspan="1">
+								<table id="tbStadistics">
+									<th>Prom</th><th>HR</th><th>RBI</th><th>OBP</th>
+									<tr>
+										<td>.45</td><td>34</td><td>.45</td><td>.33</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td id="tdName"><span id="namePlayer">Name Player</span></td>
+							<td>
+								<table id="tbHistoryPlayer">
+									<th>Wins</th><th>Loses</th><th>Hits</th><th>Home Runs</th><th>Balls</th><th>Outs</th><th>Stole Bases</th>
+									<tr>
+										<td>.45</td><td>34</td><td>.45</td><td>.33</td><td>.33</td><td>.33</td><td>.33</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="statics-player">
+					<table id="tbstatics-player">
+						<tr>
+							<td width="50%">
+								<svg id="graphics">
+									<line x1="30px" y1="20px" x2="30px" y2="240px" class="axisline"/>
+									<line x1="30px" y1="240px" x2="80%" y2="240px" class="axisline"/>
+								</svg>
+							</td>
+							<td width="50%">
+								<svg>
+								</svg>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<style type="text/css">
+			.axisline{
+				stroke: #000;
+			}
+			#userNone{
+				height: 100px;
+				width: 140px;
+			}
+			#graphics{
+				height: 300px;
+			}
+			.namePlayers:hover{
+				background-color: #A68D96;
+			}
+
+			 #tbStadistics th, #tbStadistics td{
+				text-align: center;
+				height: 25px;
+				width: 150px;
+			}
+
+			#tbStadistics th{
+				background-color: #966CEB;
+			}
+			#tbStadistics td{
+				background-color: #D4BBD3;
+			}
+
+			.namePlayers img{
+				position: relative;
+				height: 30px;
+				float: right;
+				top: -24px;
+			}
+
+			#tbHistoryPlayer th, #tbHistoryPlayer td{
+				text-align: center;
+				height: 25px;
+				width: 400px;
+				border: solid 1px;
+			}
+
+			#tbHistoryPlayer{
+				margin: 10px 0;
+				border-collapse: collapse;
+			}
+
+			#tbHistoryPlayer th{
+				background-color: #A27FE2;
+			}
+			#tbHistoryPlayer td{
+				background-color: #E1D8D8;
+			}
+	</body>
+</html>

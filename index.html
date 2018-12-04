@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LineUp</title>
+    <!--style sheet-->
+    <link href="css/skeleton.css" rel="stylesheet"/>
+    <!--Javascript-->
+    <script src="js/main.js"></script>
+    <script src="js/list.js"></script>
+    <meta name ="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8"/>
+  </head>
+
+  <body onload="init()">
+    <div class="container">
+      <div class="one-third column">&nbsp;</div>
+      <div class="one-third column">
+        <div class="navbar"><h1>Line Up</h1></div>
+        <h3 text-align="center">Teams </h3 >
+        <select id="number" onchange="val()">
+        </select>
+        <div id="image">
+          <img id="teamBigPhoto">
+          <div id="data">
+
+          </div>
+        </div>
+          <button onclick="loadPage()"; type="button">LineUp</button>
+      </div>
+      <div class="one-third column">&nbsp;</div>
+    </div>
+
+  </body>
+</html>
