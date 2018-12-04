@@ -1,0 +1,7 @@
+.linea{
+	stroke: rgb(0, 0, 0);
+	text-anchor: middle;
+	font-size: 8pt;
+	font-weight: bold;
+	fill: #777;
+}

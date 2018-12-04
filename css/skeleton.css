@@ -416,3 +416,16 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+
+   #image {
+       /* height: 50%; */
+
+       display: block;
+        top: 0;
+  left: 20%;
+  transform: translateX(-11%);
+   }
+   #teamBigPhoto {
+       width: 100%;
+       
+   }

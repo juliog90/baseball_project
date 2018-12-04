@@ -1,0 +1,78 @@
+* { 
+    font-family: arial; 
+    margin: 0px;
+    padding: 0px;
+}
+body, html { 
+    height: 100%;
+    margin: 0px; 
+    background: #EEE ;
+}
+header {
+    position: relative; float : left;
+    width: 100%; height:50px; 
+    background: #0D47A1;
+}
+#menuicon {
+    position: relative; float : left;
+    margin: 10px;
+}
+#headertext {
+    position: relative; float : left;
+    font-size: 18pt; 
+    color: #FFF;
+    margin: 10px auto auto 10px;
+}
+
+
+#listPlayer{
+    width: 20%;
+    float: left;
+}
+
+#nameTeam{
+    border: solid 1px rgb(0,0,0,0.21);
+    padding: 10px;
+    background-color: rgb(68,114,196);
+}
+
+#nameTeam img{
+    width: 30px;
+}
+
+.namePlayers{
+    border: solid 1px rgb(0,0,0,0.21);
+    padding: 10px;
+    cursor: pointer;
+}
+
+#conten-info-player{
+    padding-top: 60px;
+}
+
+
+#inf-perso-Player{
+    margin: 5px 10px;
+}
+
+#tbplayer{
+    width: 80%;
+    float: right;
+    border: solid 1px rgb(0,0,0,0.21);
+}
+
+
+#statics-player{
+    margin: 10px;
+}
+
+#tbstatics-player{
+    margin-top: 5px;
+    width: 80%;
+    border: solid 1px rgb(0,0,0,0.21);
+    float: right;
+}
+
+#plImg, #tdName{
+    text-align: center;
+}
