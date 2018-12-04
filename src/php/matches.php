@@ -2,10 +2,7 @@
 require_once('connection.php');
 require_once('team.php');
 require_once('player.php');
-require_once('lineup.php');
-
-
-
+/* require_once('lineup.php'); */
 require_once('exceptions/recordnotfoundexception.php');
 
 class Match
@@ -69,25 +66,25 @@ class Match
 
         if(func_num_args() == 1)
         {
-        $connection = MySqlConnection::getConnection();
-        $query = 'select matId,catId, matHomeTeam,matGuestTeam, matField, matStartTime, matEndTime, matRunsHomeTeam, matRunsGuestTeam
-         from matches where  matId = ? ';
-        $command = $connection->prepare($query);
-        $idTemp = func_get_arg(0);
-        $command->bind_param('i',$idTemp);
-        $command->execute();
-        $command->bind_result($id,$category,$homeTeam, $guestTeam, $field, $startTime, $endTime, $runsHomeTeam, $runsGuestTeam);
+            $connection = MySqlConnection::getConnection();
+            $query = 'select matId,catId, matHomeTeam,matGuestTeam, matField, matStartTime, matEndTime, matRunsHomeTeam, matRunsGuestTeam
+                from matches where  matId = ? ';
+            $command = $connection->prepare($query);
+            $idTemp = func_get_arg(0);
+            $command->bind_param('i',$idTemp);
+            $command->execute();
+            $command->bind_result($id,$category,$homeTeam, $guestTeam, $field, $startTime, $endTime, $runsHomeTeam, $runsGuestTeam);
             if($command->fetch())
             {
-               $this->id = $id;
-               $this->category = $category;
-               $this->homeTeam = $homeTeam;
-               $this->guestTeam = $guestTeam;
-               $this->field = $field;
-               $this->startTime = $startTime;
-               $this->endTime = $endTime;
-               $this->runsHomeTeam = $runsHomeTeam;
-               $this->runsGuestTeam = $runsGuestTeam;
+                $this->id = $id;
+                $this->category = $category;
+                $this->homeTeam = $homeTeam;
+                $this->guestTeam = $guestTeam;
+                $this->field = $field;
+                $this->startTime = $startTime;
+                $this->endTime = $endTime;
+                $this->runsHomeTeam = $runsHomeTeam;
+                $this->runsGuestTeam = $runsGuestTeam;
             }
         }
         if(func_num_args() == 9)
@@ -121,35 +118,35 @@ class Match
         ));
     }
 
-    public function toJsonFull(){
-        
-        //lineups
-        $line = array();
-        foreach($this->getLineups() as $item){
-            array_push($line, json_decode($item->toJson()));
-        }
-        return json_encode(array(
-            'id'=>$this->id,
-            'category'=>$this->category,
-            'homeTeam'=>$this->$line,
-            'guestTeam'=>$this->guestTeam,
-            'field'=>$this->field,
-            'startTime'=>$this->startTime,
-            'endTime'=>$this->endTime,
-            'runsHomeTeam'=>$this->runsHomeTeam,
-            'runsGuestTeam'=>$this->runsGuestTeam,
-           
-        ));
-    }
+    /* public function toJsonFull(){ */
+
+    /*     //lineups */
+    /*     $line = array(); */
+    /*     foreach($this->getLineups() as $item){ */
+    /*         array_push($line, json_decode($item->toJson())); */
+    /*     } */
+    /*     return json_encode(array( */
+    /*         'id'=>$this->id, */
+    /*         'category'=>$this->category, */
+    /*         'homeTeam'=>$this->$line, */
+    /*         'guestTeam'=>$this->guestTeam, */
+    /*         'field'=>$this->field, */
+    /*         'startTime'=>$this->startTime, */
+    /*         'endTime'=>$this->endTime, */
+    /*         'runsHomeTeam'=>$this->runsHomeTeam, */
+    /*         'runsGuestTeam'=>$this->runsGuestTeam, */
+
+    /*     )); */
+    /* } */
     //add match
     public function add(){
         $list = array();
-         $connection = MySqlConnection::getConnection();
-         $statement='INSERT INTO matches (matId, catId, matHomeTeam, matGuestTeam, matField, matStartTime, matEndTime, matRunsHomeTeam, matRunsGuestTeam)
-          VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?);';
-         $command = $connection->prepare($statement);
-         $command->bind_param('iiiisssii', $this->id,$this->category,$this->homeTeam,$this->guestTeam,$this->field,$this->startTime,$this->endTime,$this->runsHomeTeam,$this->runsGuestTeam);
-         $result= $command->execute();
+        $connection = MySqlConnection::getConnection();
+        $statement='INSERT INTO matches (matId, catId, matHomeTeam, matGuestTeam, matField, matStartTime, matEndTime, matRunsHomeTeam, matRunsGuestTeam)
+            VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?);';
+        $command = $connection->prepare($statement);
+        $command->bind_param('iiiisssii', $this->id,$this->category,$this->homeTeam,$this->guestTeam,$this->field,$this->startTime,$this->endTime,$this->runsHomeTeam,$this->runsGuestTeam);
+        $result= $command->execute();
         mysqli_stmt_close($command);
         $connection->close();
         return $result;
@@ -159,7 +156,7 @@ class Match
         $list = array(); 
         $connection = MySqlConnection::getConnection();
         $query='select matId,catId,matHomeTeam,matGuestTeam, matField, matStartTime, matEndTime, matRunsHomeTeam, matRunsGuestTeam 
-        from matches ';
+            from matches ';
         $command = $connection->prepare($query);
         $command->execute();
         $command->bind_result($id,$category,$homeTeam,$guestTeam,$field,$startTime,$endTime,$runsHomeTeam,$runsGuestTeam);
@@ -168,50 +165,47 @@ class Match
         }
         return $list; 
 
-     }
-     public function getLineups(){
-        $list = array();
-         //get connection
-         $connection = MySqlConnection::getConnection();
-         //query
-         $query='select l.lupId,pl.plaId, l.teaId,lupBattingTurn,l.posId,m.catId,matHomeTeam,matGuestTeam,matField,
-         matStartTime,matEndTime,matRunsHomeTeam,matRunsGuestTeam,plaImage, planumber ,perFirstName,perLastName
-         from lineups l join matches m 
-         on m.matId = l.matId
-         join players pl on l.plaId = pl.plaId
-         join persons p on pl.perId = p.perId
-         where m.matHomeTeam = l.teaId and m.matId = ?';
-         
-        //prepare statement
-        $command = $connection->prepare($query);
-        //bind params
-        $linId=$this->id;
-        $command->bind_param('i', $linId);
-        //execute
-        $command->execute();
-        //bind results
-        $command->bind_result($liId, $plaId, $battingTurn, $liPos,$category,$homeTeam,$guestTeam,$matfield,$startTime,$endTime,$runsHomeTeam,$runsGuestTeam,$image,$number,$perId,$firstName,$lastName);
-        //fetch data
-        while ($command->fetch()) {
-            //add contact to list
-            array_push($list, new LineUp($liId, $battingTurn,$liPos), new Player($plaId,$image,$number),new Person($perId,$firstName,$lastName),$category,$matfield,$homeTeam,$guestTeam,$startTime,$endTime,$runsHomeTeam,$runsGuestTeam);
-        }
-        //close command
-        mysqli_stmt_close($command);
-        //close connection
-        $connection->close();
-        //return list
-        return $list; 
     }
-     
-     public static function getAllToJson(){
-            $jsonArray = array(); //array
-            foreach(self::getAll() as $item){
-                array_push($jsonArray, json_decode($item->toJson()));
-            }
-            return json_encode($jsonArray); //return array
+    /* public function getLineups(){ */
+    /*     $list = array(); */
+    /*     //get connection */
+    /*     $connection = MySqlConnection::getConnection(); */
+    /*     //query */
+    /*     $query='select pl.plaId, l.teaId,lupBattingTurn,l.posId, perId */
+    /*         from lineups l join matches m */ 
+    /*         on m.matId = l.matId */
+    /*         join players pl on l.plaId = pl.plaId */
+    /*         join persons p on pl.perId = p.perId */
+    /*         where m.matHomeTeam = l.teaId and m.matId = ?'; */
 
-         }
+    /*     //prepare statement */
+    /*     $command = $connection->prepare($query); */
+    /*     //bind params */
+    /*     $linId=$this->id; */
+    /*     $command->bind_param('i', $linId); */
+    /*     //execute */
+    /*     $command->execute(); */
+    /*     //bind results */
+    /*     $command->bind_result( $plaId, $guestTeam, $battingTurn, $liPos ,$perId, $liId); */
+    /*     //fetch data */
+    /*     while ($command->fetch()) { */
+    /*         //add contact to list */
+    /*         array_push($list, new Player($plaId), new Person($perId)); */
+    /*     } */
+    /*     //close command */
+    /*     mysqli_stmt_close($command); */
+    /*     //close connection */
+    /*     $connection->close(); */
+    /*     //return list */
+    /*     return $list; */ 
+    /* } */
+
+    public static function getAllToJson(){
+        $jsonArray = array(); //array
+        foreach(self::getAll() as $item){
+            array_push($jsonArray, json_decode($item->toJson()));
+        }
+        return json_encode($jsonArray); //return array
+
+    }
 }
-
-?>

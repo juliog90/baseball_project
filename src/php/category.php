@@ -51,6 +51,7 @@ class Category
         $name = $this->name;
         $command->bind_param('s', $name);
         $result = $command->execute();
+        var_dump($command);
 
         mysqli_stmt_close($command);
         $connection->close();
