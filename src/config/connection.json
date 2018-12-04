@@ -2,5 +2,5 @@
     "server" : "localhost",
     "database" : "baseball",
     "user" : "root",
-    "password" : ""
+    "password" : "mypassword"
 }
