@@ -5,7 +5,7 @@ require_once('php/exceptions/recordnotfoundexception.php');
 // get
 if($_SERVER['REQUEST_METHOD'] == 'GET')
 {
-    if($parameters != '')
+    if($headers['team'] == '' && $headers['team'] == '')
     {
         try
         {
@@ -28,10 +28,9 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
     }
     else
     {
-        $line = new LineUp($parameters);
         echo json_encode(array(
             'status' => 0,
-            'lineups' => json_decode($line->getAllPlayerToJson)
+            'lineups' => json_decode(LineUp::getAllPlayerToJson($headers['team'], $headers['match']))
         ));
     }
 }

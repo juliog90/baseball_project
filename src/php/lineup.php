@@ -61,7 +61,7 @@ class LineUp {
             {
                 throw new RecordNotFoundException(func_get_arg(0));
             }
-            
+
             mysqli_stmt_close($command);
             $connection->close();
         }
@@ -87,7 +87,7 @@ class LineUp {
         while($command->fetch()) {
             array_push($lineups, new LineUp($id, $team, $position, $player, $match, $turn));
         } 
-        
+
         mysqli_stmt_close($command);
         $connection->close();
 
@@ -99,7 +99,7 @@ class LineUp {
         $players = array();
         $connection = MySqlConnection::getConnection();
         $query = 'select players.plaId from players inner join lineups
-                  on lineups.plaId = players.plaId where lineups.lupId = ?';
+            on lineups.plaId = players.plaId where lineups.lupId = ?';
         $command = $connection->prepare($query);
         $linId = $this->id;
 
@@ -112,7 +112,7 @@ class LineUp {
         {
             array_push($players, new Player($id));
         }
-        
+
         $jsonPlayers = array();
 
         foreach($players as $player) 
@@ -127,7 +127,7 @@ class LineUp {
     public static function getAllPlayerToJson($team, $match)
     {
         $lineupsJson = array();
-        $lineups = self::getAll();
+        $lineups = array();
 
         $connection = MySqlConnection::getConnection();
         $query = 'select lupId from lineups where teaId = ? and matId = ?';
@@ -138,17 +138,20 @@ class LineUp {
 
         $command->bind_result($id);
         while($command->fetch()) {
-            array_push($lineups, new LineUp($id));
+            $lin = new LineUp($id);
+            array_push($lineups, $lin);
         } 
+
+
 
         $jsonLineUps = array();
 
         foreach($lineups as $lineup) 
         {
-            array_push($jsonLineups, json_decode($lineup->toJson()));
+            array_push($jsonLineUps, json_decode($lineup->toJson()));
         }
 
-        return json_encode($jsonLineups);
+        return json_encode($jsonLineUps);
     }
 
     public function toJson() {
@@ -158,7 +161,7 @@ class LineUp {
             'turn'=> $this->turn,
             'position'=> $this->position,
             'match' => $this->match,
-            'players' => json_decode($this->getPlayers()),
+            'players' => $this->id,
         ));
     }
 
@@ -169,7 +172,7 @@ class LineUp {
         $statement = 'delete from lineups where lupId = ?';    
         $command = $connection->prepare($statement);
         $id = $this->id;
-        $command->bind_param('i', $id)
+        $command->bind_param('i', $id);
         $result = $command->execute();
 
         mysqli_stmt_close($command);
@@ -209,7 +212,7 @@ class LineUp {
         $turn = $this->turn;
         $position = $this->position;
         $match = $this->match;
-        
+
         $command->bind_param('iiisi',$player, $team, $turn, $position, $match);
         $result = $command->execute();
 
@@ -220,3 +223,4 @@ class LineUp {
     }
 }
 ?>
+
